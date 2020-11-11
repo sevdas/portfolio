@@ -4,6 +4,47 @@ body {
   font-family: "Cormorant Garamond", serif;
 }
 
+#nav-header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 100px;
+  background-color: #fa2806;
+  box-shadow: 0px 1px 10px rgb(68, 68, 68);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  position: relative;
+  display: flex;
+  list-style: none;
+  padding: 20px 40px;
+  scroll-behavior: smooth;
+}
+
+nav ul li {
+  font-size: 18px;
+  font-weight: 500;
+
+  padding: 15px;
+  line-height: 2rem;
+  text-align: inherit;
+  scroll-behavior: smooth;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #3c474d;
+  margin-left: 25px;
+}
+
+nav ul li :hover {
+  background: #f4f6ef;
+}
+
 .container {
   display: flex;
   flex-direction: row;
