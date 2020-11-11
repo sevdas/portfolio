@@ -57,6 +57,36 @@ nav ul li :hover {
   width: 100vw;
 }
 
+.wrapper {
+  /* Replace later with another font style */
+  font-family: "Comfortaa", cursive;
+  text-align: center;
+}
+.wrapper :hover {
+  cursor: not-allowed;
+  user-select: none;
+}
+
+#face {
+  fill: none;
+  stroke: #3c474d;
+  stroke-miterlimit: 10;
+  transition: all 1s ease-out;
+}
+
+circle.eye {
+  stroke: none;
+  fill: #3c474d;
+  stroke-miterlimit: 10;
+  /* line-height: 1.15; */
+}
+
+path {
+  fill: #3c474d;
+  stroke: none;
+  /* visibility: hidden; */
+}
+
 #about {
   background-color: #58b7d6;
   height: 100vh;

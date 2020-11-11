@@ -9,6 +9,10 @@
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap"
+      rel="stylesheet"
+    />
     <title>• SS • Portfolio</title>
   </head>
   <body>
@@ -35,6 +39,50 @@
     </header>
     <section class="home-section" id="home">
       <div class="container">
+        <div class="wrapper instructions">
+          <title>Happy Face</title>
+          Hello! Welcome to my world! Either ·click or ·move down!
+          <svg id="face">
+            <!-- height="600" width="300" -->
+            <!-- Face -->
+            <circle cx="51" cy="51" r="48.5" />
+            <!-- Left eye -->
+            <circle cx="25" cy="45" r="10" class="eye" />
+
+            <!-- Right Eye -->
+            <circle cx="80" cy="45" r="10" class="eye" />
+
+            <!-- Smile -->
+            <!-- <path d="M65.5,70.6 v9 h-28.7 v-9 h28.7z" /> -->
+            <!-- <path d="M115, 105 ,0.8 0.2 0,0 70,0" /> -->
+
+            <!-- Smile Up -->
+            <path
+              d="M50.4,82.8c-9.8,0-17.7-8-17.7-17.7h9c0,4.8,3.9,8.7,8.7,8.7s8.7-3.9,8.7-8.7h9C68.1,74.9,60.2,82.8,50.4,82.8z"
+            />
+            <!-- Smile Down-->
+            <!-- <path
+              d="M50.4,74c9.8,0,17.7,8,17.7,17.7h-9c0-4.8-3.9-8.7-8.7-8.7s-8.7,3.9-8.7,8.7h-9C32.7,81.9,40.6,74,50.4,82.8z"
+            /> -->
+          </svg>
+        </div>
+        <a class="toggle">
+          <span
+            id="changing-text"
+            class="toggle-text"
+            style="transform: matrix(1, 0, 0, 1, 0, 0)"
+            >"Definitely do not click here!"</span
+          >
+          <span
+            class="toggle transform"
+            style="transform: matrix(1, 0, 0, 1, 0, 0)"
+          ></span>
+          <span
+            class="toggle transform"
+            style="transform: matrix(1, 0, 0, 1, 175, 0)"
+          ></span>
+        </a>
+      </div>
         <h1>Home</h1>
       </div>
     </section>
