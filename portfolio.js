@@ -1,21 +1,26 @@
-const face = document.querySelector('#face'); // document.getElementById('face')
-const path = face.querySelector("path")
-const changingText = document.querySelector("#changing-text")
+//Moody Face 
+const happyFace = document.querySelector("#face-happy")
+const sadFace = document.querySelector("#face-sad")
+const helloMsg = document.querySelector("#hello-message")
 
-console.log(changingText)
- console.log(face);
- console.log(path)
-
+sadFace.style.display='none'
 
 let count = 0
-face.addEventListener('click',function() {
+
+function moodyFace() {
    count++
    if (count%2 === 0) {
-       path.setAttribute('d', 'M50.4,82.8c-9.8,0-17.7-8-17.7-17.7h9c0,4.8,3.9,8.7,8.7,8.7s8.7-3.9,8.7-8.7h9C68.1,74.9,60.2,82.8,50.4,82.8z');
-       changingText.textContent = 'Hello! Welcome to my world! Either ·click or ·move down!'
+    happyFace.style.display='block'
+    sadFace.style.display='none'
+       helloMsg.textContent = 'Hello! Welcome to my world! Either ·click or ·move down!'
    } else {
-       path.setAttribute( 'd', 'M50.4,74c9.8,0,17.7,8,17.7,17.7h-9c0-4.8-3.9-8.7-8.7-8.7s-8.7,3.9-8.7,8.7h-9C32.7,81.9,40.6,74,50.4,82.8z')
-       changingText.textContent = 'Uh! Panic!'
+       happyFace.style.display='none'
+       sadFace.style.display='block'
+       helloMsg.textContent = 'Uh! Panic!'
  
+ }
 }
-});
+
+happyFace.addEventListener('click', moodyFace)
+sadFace.addEventListener('click', moodyFace)
+

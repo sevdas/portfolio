@@ -46,11 +46,25 @@ nav ul li :hover {
 }
 
 .container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  padding: 140px 0;
+  padding: 100px 0px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-right: 55px;
+  text-align: right;
+  font-size: 12px;
+  line-height: 12px;
 }
+
+h1 {
+  visibility: hidden;
+}
+
+.hello {
+  visibility: initial;
+  display: flex;
+  justify-content: center;
+}
+
 #home {
   background-color: #f4f6ef;
   height: 100vh;
@@ -58,33 +72,26 @@ nav ul li :hover {
 }
 
 .wrapper {
-  /* Replace later with another font style */
   font-family: "Comfortaa", cursive;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
+
+#hello-message {
+  padding: 15px;
+}
+
 .wrapper :hover {
   cursor: not-allowed;
   user-select: none;
 }
 
-#face {
-  fill: none;
-  stroke: #3c474d;
-  stroke-miterlimit: 10;
-  transition: all 1s ease-out;
-}
-
-circle.eye {
-  stroke: none;
-  fill: #3c474d;
-  stroke-miterlimit: 10;
-  /* line-height: 1.15; */
-}
-
-path {
-  fill: #3c474d;
-  stroke: none;
-  /* visibility: hidden; */
+#face-happy,
+#face-sad {
+  width: 250px;
 }
 
 #about {
@@ -97,4 +104,9 @@ path {
   background-color: #fbae04;
   height: 100vh;
   width: 100vw;
+}
+
+.footer {
+  background-color: #fa2806;
+  text-align: center;
 }
