@@ -78,6 +78,10 @@ h1 {
   align-items: center;
 }
 
+#home:focus {
+  background-color: black;
+}
+
 .wrapper {
   font-family: "Comfortaa", cursive;
   display: flex;
@@ -87,6 +91,7 @@ h1 {
 
 #hello-message {
   padding: 15px;
+  margin-right: 10px;
 }
 
 .wrapper :hover {
@@ -123,7 +128,7 @@ h1 {
   height: 50px;
   background-color: purple;
   position: relative;
-  border-radius: 5px;
+  border-radius: 15px;
   display: flex;
   padding: 30px;
   justify-content: center;
@@ -143,7 +148,7 @@ h1 {
   align-items: flex-end;
 }
 
-.talkbubble-message {
+#talkbubble-message {
   padding-top: 7px;
   font-size: 14px;
   text-decoration: underline;
