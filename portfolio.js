@@ -12,7 +12,7 @@ function moodyFace() {
    if (count%2 === 0) {
     happyFace.style.display='block'
     sadFace.style.display='none'
-       helloMsg.textContent = 'Hello! Welcome to my world! Either ·click or ·move down!'
+       helloMsg.textContent = 'Hello! Welcome to my world!'
    } else {
        happyFace.style.display='none'
        sadFace.style.display='block'
