@@ -2,6 +2,7 @@ body {
   margin: 0px;
   padding: 0px;
   font-family: "Cormorant Garamond", serif;
+  /* font-family: "Comfortaa", cursive; */
 }
 
 #nav-header {
@@ -28,9 +29,8 @@ nav ul {
 }
 
 nav ul li {
-  font-size: 18px;
-  font-weight: 500;
-
+  font-size: 16px;
+  font-weight: bold;
   padding: 15px;
   line-height: 2rem;
   text-align: inherit;
@@ -59,14 +59,11 @@ h1 {
   visibility: hidden;
 }
 
-.hello {
-  visibility: initial;
-  display: flex;
-  justify-content: center;
-}
-
-#hello-message {
+.changing-messege {
   font-size: 18px;
+  /* line-height: 10px; */
+  max-width: 50%;
+  text-align: center;
 }
 
 #home {
@@ -78,20 +75,11 @@ h1 {
   align-items: center;
 }
 
-#home:focus {
-  background-color: black;
-}
-
 .wrapper {
   font-family: "Comfortaa", cursive;
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
-
-#hello-message {
-  padding: 15px;
-  margin-right: 10px;
 }
 
 .wrapper :hover {
@@ -102,6 +90,38 @@ h1 {
 #face-happy,
 #face-sad {
   width: 250px;
+}
+
+.bubble {
+  width: 270px;
+  height: 50px;
+  background-color: purple;
+  position: relative;
+  border-radius: 15px;
+  display: flex;
+  padding: 30px;
+  justify-content: center;
+  margin: 10px;
+}
+
+.bubble:after {
+  content: "";
+  position: absolute;
+  right: 100%;
+  top: 56px;
+  border-right: 46px solid purple;
+  border-bottom: 23px solid transparent;
+}
+
+.bubble-face {
+  display: flex;
+  align-items: flex-end;
+}
+
+#talkbubble {
+  padding-top: 7px;
+  font-size: 14px;
+  text-decoration: underline;
 }
 
 #about {
@@ -121,35 +141,4 @@ h1 {
   text-align: center;
   font-size: 14px;
   padding: 5px;
-}
-
-.bubble {
-  width: 270px;
-  height: 50px;
-  background-color: purple;
-  position: relative;
-  border-radius: 15px;
-  display: flex;
-  padding: 30px;
-  justify-content: center;
-  margin: 10px;
-}
-.bubble:before {
-  content: "";
-  position: absolute;
-  right: 100%;
-  top: 56px;
-  border-right: 46px solid purple;
-  border-bottom: 23px solid transparent;
-}
-
-.bubble-face {
-  display: flex;
-  align-items: flex-end;
-}
-
-#talkbubble-message {
-  padding-top: 7px;
-  font-size: 14px;
-  text-decoration: underline;
 }

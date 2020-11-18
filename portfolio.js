@@ -4,7 +4,7 @@ const sadFace = document.querySelector("#face-sad")
 const helloMsg = document.querySelector("#hello-message")
 
 const homeSection = document.querySelector('#home')
-const bubbleMessage = document.querySelector('#talkbubble-message')
+const bubbleMessage = document.querySelector('#talkbubble')
 
 
 sadFace.style.display='none'
