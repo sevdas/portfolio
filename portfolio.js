@@ -20,6 +20,7 @@ function moodyFace() {
        helloMsg.style.color = 'black'
        homeSection.style.background = '#f4f6ef'
        bubbleMessage.textContent = "Now you know! Scroll down!" 
+    //    helloMsg.textContent = ''
 
    } else {
        happyFace.style.display='none'
