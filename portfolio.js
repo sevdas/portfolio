@@ -35,3 +35,13 @@ function moodyFace() {
 happyFace.addEventListener('click', moodyFace)
 sadFace.addEventListener('click', moodyFace)
 
+
+
+// function disableScroll() {
+//    document.body.style.overflow = 'hidden';
+//    document.querySelector('html').scrollTop = window.scrollY;
+//    }
+   
+//    function enableScroll() {
+//    document.body.style.overflow = null;
+//    }
