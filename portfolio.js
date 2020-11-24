@@ -24,8 +24,6 @@ function moodyFace() {
        helloMsg.style.color = 'black'
        homeSection.style.background = '#f4f6ef'
        bubbleMessage.textContent = "Now you know! Scroll down!" 
-    //    helloMsg.textContent = ''
-
    } else {
        happyFace.style.display='none'
        sadFace.style.display='block'
@@ -40,10 +38,10 @@ happyFace.addEventListener('click', moodyFace)
 sadFace.addEventListener('click', moodyFace)
 
 
-//Carousel
 
+//Carousel
+//Pseudo
 //When I click previous button, move slides to the left. 
-//When I click next button, move slides to the right. 
 //When I click to the thumbnail image gallery, move to the slide. 
 
 const trackList = document.querySelector('.carousel-track-list')
@@ -53,13 +51,37 @@ const prevButton = document.querySelector('.carousel-button carousel-button--pre
 const thumbnailTrack = document.querySelector('.thumbnail-track-list')
 const thumbnailSlideImage = Array.from(thumbnailTrack.children)
 
-// console.log(slides)
-// console.log(thumbnailTrack)
-// console.log(thumbnailSlideImage)
+
 
 //  Define size of an element and its position relative to the viewport.
-
 const slideSize = slides[0].getBoundingClientRect()
 const sizeWidth = slideSize.width
 
-console.log(sizeWidth)
+
+//Arrange slides next to one another 
+
+// slides[0].style.left = sizeWidth * 0 + 'px'
+// slides[1].style.left = sizeWidth * 1 + 'px'
+// slides[2].style.left = sizeWidth * 2 + 'px'
+//....
+const leftSlidePosition = slides.forEach((slide, idx) => slide.style.left = sizeWidth * idx + 'px')
+
+//When I click next button, move slides to the right. 
+function slideMovePosition(){
+  const currentSlide = trackList.querySelector('.current-slide')
+  const nextSlide = currentSlide.nextElementSibling
+
+//Move an element sideway to the next one
+  const moveAmount = nextSlide.style.left
+
+// Move it over by that much
+  trackList.style.transform = 'translateX(-'+ moveAmount +')'
+
+//Add current position class to the every next slide
+ currentSlide.classList.remove('current-slide')
+ nextSlide.classList.add('current-slide')
+
+}
+
+nextButton.addEventListener('click', slideMovePosition)
+
