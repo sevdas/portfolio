@@ -40,48 +40,70 @@ sadFace.addEventListener('click', moodyFace)
 
 
 //Carousel
-//Pseudo
-//When I click previous button, move slides to the left. 
-//When I click to the thumbnail image gallery, move to the slide. 
 
 const trackList = document.querySelector('.carousel-track-list')
 const slides = Array.from(trackList.children)
 const nextButton = document.querySelector('.carousel-button--next')
-const prevButton = document.querySelector('.carousel-button carousel-button--prev')
-const thumbnailTrack = document.querySelector('.thumbnail-track-list')
-const thumbnailSlideImage = Array.from(thumbnailTrack.children)
+const prevButton = document.querySelector('.carousel-button--prev')
 
 
-
-//  Define size of an element and its position relative to the viewport.
+//Define size of an element and its position relative to the viewport.
 const slideSize = slides[0].getBoundingClientRect()
 const sizeWidth = slideSize.width
 
 
 //Arrange slides next to one another 
-
-// slides[0].style.left = sizeWidth * 0 + 'px'
-// slides[1].style.left = sizeWidth * 1 + 'px'
-// slides[2].style.left = sizeWidth * 2 + 'px'
-//....
 const leftSlidePosition = slides.forEach((slide, idx) => slide.style.left = sizeWidth * idx + 'px')
 
-//When I click next button, move slides to the right. 
-function slideMovePosition(){
-  const currentSlide = trackList.querySelector('.current-slide')
-  const nextSlide = currentSlide.nextElementSibling
 
-//Move an element sideway to the next one
-  const moveAmount = nextSlide.style.left
-
-// Move it over by that much
-  trackList.style.transform = 'translateX(-'+ moveAmount +')'
+function moveToSlidePosition(trackList, currentSlide, targetSlide){
+//Move an element sideways to the next one by that much
+trackList.style.transform = 'translateX(-'+ targetSlide.style.left +')'
 
 //Add current position class to the every next slide
  currentSlide.classList.remove('current-slide')
- nextSlide.classList.add('current-slide')
-
+ targetSlide.classList.add('current-slide')
 }
 
-nextButton.addEventListener('click', slideMovePosition)
 
+//When I click next button, move slides to the right. 
+nextButton.addEventListener('click', event => {
+  const currentSlide = trackList.querySelector('.current-slide')
+  const nextSlide = currentSlide.nextElementSibling
+
+  moveToSlidePosition(trackList, currentSlide, nextSlide)
+})
+
+
+//When I click previous button, move slides to the left. 
+prevButton.addEventListener('click', event => {
+ 
+  const currentSlide = trackList.querySelector('.current-slide')
+  const prevSlide = currentSlide.previousElementSibling
+
+  moveToSlidePosition(trackList, currentSlide, prevSlide)
+
+})
+
+//When I click to the thumbnail image gallery, move to the slide. 
+const thumbnailTrack = document.querySelector('.thumbnail-track-list')
+const thumbImages = document.querySelectorAll('.thumbnail-image')
+const arrayThumbImages = Array.from(thumbImages)
+
+
+// Thumbnail clicked on
+function moveToThumbnail(event){
+
+const targetImage = event.target //image on click
+
+
+const targetIndex = arrayThumbImages.findIndex(img => img === targetImage) //array of images
+const targetSlide = slides[targetIndex] //navigate in between the thumb images 
+const currentSlide = trackList.querySelector('.current-slide')
+
+console.log(targetIndex)
+console.log(targetSlide)
+moveToSlidePosition(trackList, currentSlide, targetSlide)
+}
+
+thumbnailTrack.addEventListener('click', moveToThumbnail)
