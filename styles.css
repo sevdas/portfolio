@@ -56,10 +56,6 @@ nav ul li :hover {
   line-height: 12px;
 }
 
-h1 {
-  visibility: hidden;
-}
-
 #home {
   background-color: #f4f6ef;
   min-height: 100vh;
@@ -67,6 +63,11 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+#home h1,
+#about h1 {
+  visibility: hidden;
 }
 
 .changing-messege {
@@ -77,7 +78,7 @@ h1 {
   transform: translateX(-6%);
 }
 
-.wrapper {
+.wrapper-home {
   font-family: "Comfortaa", cursive;
   display: flex;
   flex-direction: column;
@@ -177,6 +178,10 @@ h1 {
   width: 100%;
 }
 
+.carousel-figure img:hover {
+  filter: opacity(70%);
+}
+
 figcaption {
   position: absolute;
   top: 35%;
@@ -199,7 +204,6 @@ figcaption h3 {
 }
 
 .carousel-wrapper {
-  background: blue;
   height: 100%;
   overflow: hidden;
   position: relative;
