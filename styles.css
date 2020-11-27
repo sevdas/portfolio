@@ -108,6 +108,8 @@ h1 {
 }
 
 .bubble:after {
+  /* Use pseudo elements to insert arrows 
+  inside of buble div */
   content: "";
   position: absolute;
   right: 100%;
@@ -207,6 +209,7 @@ figcaption h3 {
   padding: 0px;
   margin: 0;
   list-style: none;
+  transition: all 0.6s ease-out;
 }
 
 .carousel-slide {
@@ -215,7 +218,6 @@ figcaption h3 {
   bottom: 0;
   left: 0px;
   width: 100%;
-  transition: 0.5s ease-in-out;
 }
 
 .carousel-button {
@@ -256,6 +258,9 @@ figcaption h3 {
   position: relative;
   margin: 0 auto;
   margin-top: 6px;
+  /* Apply 'border-box' to 'box-sizing' 
+  so border and padding is included in the width and height. */
+  box-sizing: border-box;
 }
 
 .thumbnail-track-list {
@@ -282,6 +287,10 @@ figcaption h3 {
 
 .thumbnail-slide :hover {
   border-radius: 10px;
+  filter: opacity(70%);
+}
+
+.current-thumb-slide {
   filter: opacity(70%);
 }
 
