@@ -54,6 +54,8 @@ nav ul li :hover {
   padding: 45px 0px;
   font-size: 12px;
   line-height: 12px;
+  min-width: auto;
+  min-height: auto;
 }
 
 #home {
@@ -86,7 +88,7 @@ nav ul li :hover {
   padding-left: 270px;
 }
 
-.wrapper :hover {
+.wrapper-home :hover {
   cursor: not-allowed;
   user-select: none;
 }
@@ -302,6 +304,58 @@ figcaption h3 {
   background-color: #fbae04;
   min-height: 100vh;
   min-width: 100vw;
+}
+
+.wrapper-contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 400px;
+  padding: 45px 0px;
+}
+
+hgroup {
+  font-size: 20px;
+  color: rgb(68, 68, 68);
+}
+
+hr {
+  width: 3px;
+  height: 50px;
+  margin: 0 20px;
+  background: rgb(68, 68, 68);
+  border: none;
+}
+
+.media-links {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.media-links li {
+  display: inline-block;
+  margin-right: 1em;
+  font-size: 32px;
+}
+
+.media-links li a,
+.logo-freecodecamp {
+  color: rgb(68, 68, 68);
+  transition: color 0.5s;
+  fill: rgb(68, 68, 68);
+}
+
+/* Official HEX colors for the social media brands */
+.logo-codewars :hover {
+  color: #aa3022;
+}
+
+.logo-freecodecamp :hover {
+  fill: #ff4025;
+}
+
+.logo-github :hover {
+  color: #6e5494;
 }
 
 .footer {
