@@ -31,6 +31,7 @@ function moodyFace() {
        bubbleMessage.textContent = 'I can not see you! :/ Switch back please!'
        helloMsg.textContent = 'Uh! Panic!'
        helloMsg.style.color = 'white'
+       helloMsg.style.transform = 'transform: translateX(-60%)'
  }
 }
 
