@@ -31,7 +31,8 @@ function moodyFace() {
        bubbleMessage.textContent = 'I can not see you! :/ Switch back please!'
        helloMsg.textContent = 'Uh! Panic!'
        helloMsg.style.color = 'white'
-       helloMsg.style.transform = 'transform: translateX(-60%)'
+      //Changing the area in which that press will trigger the “click” DOM event.
+      //  helloMsg.style.transform = 'translateX(70px)'
  }
 }
 
