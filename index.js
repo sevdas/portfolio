@@ -2,13 +2,15 @@
 // Break it down to manegable pieces, experiment and make things work. It's not about doing things 
 // right way but making things work and then improving them so they work.  
 
+
 //MOODY FACE
 const happyFace = document.querySelector('#face-happy')
 const sadFace = document.querySelector('#face-sad')
-const helloMsg = document.querySelector('#hello-message')
-
+const changingMsg = document.querySelector('.changing-messege')
+const helloMsg = changingMsg.firstElementChild
 const homeSection = document.querySelector('#home')
 const bubbleMessage = document.querySelector('#talkbubble')
+
 
 
 sadFace.style.display='none'
@@ -31,13 +33,12 @@ function moodyFace() {
        bubbleMessage.textContent = 'I can not see you! :/ Switch back please!'
        helloMsg.textContent = 'Uh! Panic!'
        helloMsg.style.color = 'white'
-      //Changing the area in which that press will trigger the “click” DOM event.
-      //  helloMsg.style.transform = 'translateX(70px)'
- }
+   }
 }
 
 happyFace.addEventListener('click', moodyFace)
 sadFace.addEventListener('click', moodyFace)
+
 
 
 

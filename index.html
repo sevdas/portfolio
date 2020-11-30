@@ -56,7 +56,7 @@
     <section id="home">
       <div class="home-container">
         <article class="changing-messege">
-          <p id="hello-message">Hello! Welcome to my world!</p>
+          <p>Hello! Welcome to my world!</p>
         </article>
         <div class="wrapper-face">
           <svg id="face-happy" viewBox="0 0 95 97.4">
@@ -501,22 +501,37 @@
             </li>
           </ul>
         </div>
-        <form action="/contact-form" class="action" method="post">
+        <form class="contact-form" action="/contact-form" method="post">
           <ul>
             <li>
               <label for="name">Name *</label>
-              <input type="text" id="name" name="user_name" />
+              <input
+                type="text"
+                id="name"
+                name="user_name"
+                placeholder="Your Name..."
+              />
             </li>
             <li>
               <label for="mail">E-mail *</label>
-              <input type="email" id="mail" name="user_mail" />
+              <input
+                type="email"
+                id="mail"
+                name="user_mail"
+                placeholder="Your E-mail Address..."
+                required
+              />
             </li>
             <li>
               <label for="msg">Message *</label>
-              <textarea id="name" name="user_message"></textarea>
+              <textarea
+                id="name"
+                name="user_message"
+                placeholder="Your Message..."
+              ></textarea>
             </li>
-            <li class="button">
-              <button type="submit">Magic!</button>
+            <li class="form-button">
+              <button id="submit" type="submit">Magic!</button>
             </li>
           </ul>
         </form>
