@@ -394,6 +394,9 @@ hr {
 
 span {
   color: #58b7d6;
+  font-family: "Comfortaa", cursive;
+  font-size: 14px;
+  font-weight: 600;
 }
 
 /* Center the form on the page */

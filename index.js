@@ -11,6 +11,19 @@ const helloMsg = changingMsg.firstElementChild
 const homeSection = document.querySelector('#home')
 const bubbleMessage = document.querySelector('#talkbubble')
 
+// Welcome Type Effect
+const welcome = 'Hello! Welcome to my world'
+let index = 0;
+helloMsg.textContent = ''
+
+function typeWriterWelcome(){
+if(welcome.length > index){
+  helloMsg.textContent += welcome.charAt(index)
+  index++
+setTimeout(typeWriterWelcome, 100)
+}
+}
+typeWriterWelcome()
 
 
 sadFace.style.display='none'
@@ -55,7 +68,7 @@ const sizeWidth = slideSize.width
 
 
 //Arrange slides next to one another 
-const leftSlidePosition = carouselSlides.forEach((slide, idx) => slide.style.left = sizeWidth * idx + 'px')
+const leftSlidePosition = carouselSlides.forEach((slide, idx) => slide.style.left = `${sizeWidth * idx}px`)
 
 
 function moveToSlidePosition(trackList, currentSlide, targetSlide){
@@ -137,3 +150,21 @@ function moveToThumbnail(event){
 
 }
 thumbnailTrack.addEventListener('click', moveToThumbnail)
+
+// SayHi In Motion
+const sayHiGroup = document.querySelector('hgroup')
+const sayHiMessage = sayHiGroup.firstElementChild
+
+const greet = 'Say Hi'
+let idx = 0;
+sayHiMessage.textContent = ''
+
+function typeWriter(){
+if(greet.length > idx){
+  sayHiMessage.textContent += greet.charAt(idx)
+  idx++
+setTimeout(typeWriter, 750)
+}
+}
+
+typeWriter()
