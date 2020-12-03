@@ -6,26 +6,37 @@
 //MOODY FACE
 const happyFace = document.querySelector('#face-happy')
 const sadFace = document.querySelector('#face-sad')
-const changingMsg = document.querySelector('.changing-messege')
+const changingMsg = document.querySelector('.changing-message')
 const helloMsg = changingMsg.firstElementChild
 const homeSection = document.querySelector('#home')
 const bubbleMessage = document.querySelector('#talkbubble')
 
-// Welcome Type Effect
-const welcome = 'Hello! Welcome to my world'
-let index = 0;
-helloMsg.textContent = ''
 
+// Welcome Type Effect
+const helloMessageInnerText='Hello! Welcome to my world!'
+const innerTextArray = helloMessageInnerText.split('')
+
+let idx = 0;
 function typeWriterWelcome(){
-if(welcome.length > index){
-  helloMsg.textContent += welcome.charAt(index)
-  index++
+if(innerTextArray.length > idx){
+  const span = document.createElement("p")
+  span.innerText = innerTextArray[idx]
+  span.style.position = 'absolute'
+  span.style.left = '50%'
+  span.style.height = '360px'
+  span.style.margin = '0'
+  span.style.margin = '0'
+
+  document.getElementById("changing-message-div").appendChild(span)
+  span.style.transform = `rotate(${(-120)+idx*8}deg) `
+  idx++
 setTimeout(typeWriterWelcome, 100)
 }
 }
 typeWriterWelcome()
 
 
+//MOODY FACE
 sadFace.style.display='none'
 let count = 0
 
@@ -35,7 +46,6 @@ function moodyFace() {
     happyFace.style.display='block'
     sadFace.style.display='none'
 
-       helloMsg.textContent = 'Hello! Welcome to my world!'
        helloMsg.style.color = 'black'
        homeSection.style.background = '#f4f6ef'
        bubbleMessage.textContent = "Now you know! Scroll down!" 
@@ -44,7 +54,6 @@ function moodyFace() {
        sadFace.style.display='block'
        homeSection.style.background  = 'black' 
        bubbleMessage.textContent = 'I can not see you! :/ Switch back please!'
-       helloMsg.textContent = 'Uh! Panic!'
        helloMsg.style.color = 'white'
    }
 }
@@ -151,20 +160,3 @@ function moveToThumbnail(event){
 }
 thumbnailTrack.addEventListener('click', moveToThumbnail)
 
-// SayHi In Motion
-const sayHiGroup = document.querySelector('hgroup')
-const sayHiMessage = sayHiGroup.firstElementChild
-
-const greet = 'Say Hi'
-let idx = 0;
-sayHiMessage.textContent = ''
-
-function typeWriter(){
-if(greet.length > idx){
-  sayHiMessage.textContent += greet.charAt(idx)
-  idx++
-setTimeout(typeWriter, 750)
-}
-}
-
-typeWriter()
