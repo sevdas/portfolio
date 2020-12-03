@@ -3,7 +3,7 @@
 // right way but making things work and then improving them so they work.  
 
 
-//MOODY FACE
+//MOODY FACE VARIABLES
 const happyFace = document.querySelector('#face-happy')
 const sadFace = document.querySelector('#face-sad')
 const changingMsg = document.querySelector('.changing-message')
@@ -12,7 +12,7 @@ const homeSection = document.querySelector('#home')
 const bubbleMessage = document.querySelector('#talkbubble')
 
 
-// Welcome Type Effect
+// Welcome Type Effect ** Text on a circle
 const helloMessageInnerText='Hello! Welcome to my world!'
 const innerTextArray = helloMessageInnerText.split('')
 
@@ -24,7 +24,6 @@ if(innerTextArray.length > idx){
   span.style.position = 'absolute'
   span.style.left = '50%'
   span.style.height = '360px'
-  span.style.margin = '0'
   span.style.margin = '0'
 
   document.getElementById("changing-message-div").appendChild(span)
