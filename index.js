@@ -26,7 +26,7 @@ if(innerTextArray.length > idx){
   span.style.height = '360px'
   span.style.margin = '0'
 
-  document.getElementById("changing-message-div").appendChild(span)
+  document.getElementById("changing-message-aside").appendChild(span)
   span.style.transform = `rotate(${(-120)+idx*8}deg) `
   idx++
 setTimeout(typeWriterWelcome, 100)
