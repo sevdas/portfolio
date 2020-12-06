@@ -3,31 +3,31 @@
 // right way but making things work and then improving them so they work.  
 
 
-//MOODY FACE VARIABLES
+//MOODY FACE ELEMENTS
 const happyFace = document.querySelector('#face-happy')
 const sadFace = document.querySelector('#face-sad')
-const changingMsg = document.querySelector('.changing-message')
-const helloMsg = changingMsg.firstElementChild
 const homeSection = document.querySelector('#home')
 const bubbleMessage = document.querySelector('#talkbubble')
+// Parent Element
+const helloMessage = document.getElementById('changing-message-aside')
 
 
-// Welcome Type Effect ** Text on a circle
+// TEXT ON A CIRCLE WELCOME TYPE EFFECT
 const helloMessageInnerText='Hello! Welcome to my world!'
 const innerTextArray = helloMessageInnerText.split('')
 
 let idx = 0;
-function typeWriterWelcome(){
+function typeWriterWelcome(){ 
 if(innerTextArray.length > idx){
-  const span = document.createElement("p")
-  span.innerText = innerTextArray[idx]
-  span.style.position = 'absolute'
-  span.style.left = '50%'
-  span.style.height = '360px'
-  span.style.margin = '0'
+  const helloMsgLetter = document.createElement('p')
+  helloMsgLetter.innerText = innerTextArray[idx]
+  helloMsgLetter.style.position = 'absolute'
+  helloMsgLetter.style.left = '50%'
+  helloMsgLetter.style.height = '360px'
+  helloMsgLetter.style.margin = '0'
 
-  document.getElementById("changing-message-aside").appendChild(span)
-  span.style.transform = `rotate(${(-120)+idx*8}deg) `
+  document.getElementById('changing-message-aside').appendChild(helloMsgLetter)
+  helloMsgLetter.style.transform = `rotate(${(-120)+idx*8}deg) `
   idx++
 setTimeout(typeWriterWelcome, 100)
 }
@@ -45,7 +45,6 @@ function moodyFace() {
     happyFace.style.display='block'
     sadFace.style.display='none'
 
-       helloMsg.style.color = 'black'
        homeSection.style.background = '#f4f6ef'
        bubbleMessage.textContent = "Now you know! Scroll down!" 
    } else {
@@ -53,7 +52,7 @@ function moodyFace() {
        sadFace.style.display='block'
        homeSection.style.background  = 'black' 
        bubbleMessage.textContent = 'I can not see you! :/ Switch back please!'
-       helloMsg.style.color = 'white'
+      //  helloMessage.style.color = 'white'
    }
 }
 

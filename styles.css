@@ -11,39 +11,41 @@ body {
   font-family: "Cormorant Garamond", serif;
 }
 
-@media only screen and (max-width: 480px),
-  only screen and (max-device-width: 480px) {
-}
-
-#nav-header {
+#nav-bar {
   position: fixed;
-  right: 0;
-  left: 0;
+  top: 0;
   background-color: #fa2806;
   box-shadow: 0px 1px 10px rgb(68, 68, 68);
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
+  width: 100%;
+  height: 90px;
 }
 
-nav ul {
+#nav-bar img {
+  width: 120px;
+  height: 80px;
+}
+
+.menu ul {
   display: flex;
   list-style: none;
   margin-right: 2em;
 }
 
-nav ul li {
+.menu ul li {
   padding: 0 1.5em;
 }
 
-nav ul li a {
+.menu ul li a {
   text-decoration: none;
   color: #3c474d;
   font-size: 1.1em;
 }
 
-nav ul li :hover {
+.menu ul li :hover {
   background: #f4f6ef;
 }
 
@@ -87,8 +89,8 @@ nav ul li :hover {
 }
 
 .bubble {
-  width: 270px;
-  max-width: 40%;
+  width: 40%;
+  max-width: 270px;
   height: 50px;
   background-color: purple;
   position: relative;
@@ -109,13 +111,13 @@ nav ul li :hover {
   right: 100%;
   top: 50%;
   border-right: 3em solid purple;
-  border-bottom: 1.5em solid transparent;
+  border-bottom: 1.7em solid transparent;
 }
 
-#talkbubble {
+/* #talkbubble {
   font-size: 0.9em;
   text-decoration: underline;
-}
+} */
 
 #about {
   background-color: #58b7d6;
@@ -141,6 +143,8 @@ nav ul li :hover {
   font-weight: 300;
   font-size: 1.2em;
   opacity: 0.7;
+  width: 65%;
+  text-align: center;
 }
 
 .intro p {
@@ -153,13 +157,15 @@ nav ul li :hover {
 .carousel {
   position: relative;
   top: 2.5em;
-  height: 400px;
-  width: 65%;
   margin: 0 auto;
 }
 
 .carousel-wrapper {
-  height: 100%;
+  height: 50vh;
+  width: 65%;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
   overflow: hidden;
   position: relative;
 }
@@ -184,7 +190,7 @@ nav ul li :hover {
 
 .carousel-image {
   max-width: 100%;
-  height: auto;
+  min-height: 50vh;
   object-fit: cover;
   opacity: 0.4;
 }
@@ -247,9 +253,10 @@ figcaption h2 {
 }
 
 .thumbnail-wrapper {
-  padding-top: 0.4%;
+  width: 65%;
   height: auto;
-  max-width: 100%;
+  margin: 0 auto;
+  padding-top: 0.2%;
 }
 
 .thumbnail-track-list {
@@ -259,6 +266,11 @@ figcaption h2 {
   list-style-type: none;
   /* rearrange spaces between li tags*/
   display: flex;
+}
+
+.thumbnail-slide {
+  height: 15vh;
+  width: 100%;
 }
 
 .thumbnail-slide img {
@@ -342,7 +354,7 @@ hr {
 }
 
 .personal-image {
-  width: 350px;
+  width: 300px;
   margin: 0 auto;
 }
 
@@ -356,7 +368,7 @@ hr {
   font-weight: 600;
   line-height: 24px;
   text-align: center;
-  padding-top: 15%;
+  padding: 15% 0;
 }
 
 span {
@@ -370,11 +382,14 @@ span {
 .contact-form {
   margin: 0 auto;
   padding: 1em;
+  background: rgb(0, 0, 0, 0.05);
+  width: 85%;
+  border-radius: 2%;
 }
 
 .contact-form ul {
   list-style: none;
-  margin: 70px auto;
+  margin: 0 auto;
   padding: 0;
 }
 
@@ -393,7 +408,7 @@ textarea {
   font: 1em "Cormorant Garamond", serif;
   box-sizing: border-box;
   height: 2em;
-  width: 500px;
+  width: 100%;
   border-color: #f4f6ef;
   border-radius: 3px;
   border-style: solid;
@@ -424,7 +439,56 @@ textarea {
 .footer {
   background-color: #fa2806;
   text-align: center;
-  font-size: 14px;
-  padding: 5px;
-  width: 100vw;
+  font-size: 12px;
+  height: auto;
+  max-width: 100%;
+  padding: 0.2em;
+  letter-spacing: 0.2em;
+}
+
+/* If the browser window is 600px or smaller */
+@media screen and (max-width: 600px) {
+  .footer {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+  }
+
+  .personal-image {
+    width: 200px;
+  }
+
+  .wrapper-contact {
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
+  hr {
+    width: 40%;
+    height: 3px;
+    align-items: center;
+  }
+
+  .media-links {
+    padding-left: 1.5em;
+  }
+
+  .intro h1 {
+    text-align: left;
+  }
+
+  .menu ul {
+    font-size: 12.5px;
+  }
+
+  .menu ul li {
+    padding: 0 0.7em;
+  }
+}
+
+/* If the browser window is 768px or up */
+@media screen and (max-width: 768px) {
+  #nav-bar img {
+    width: 100px;
+    height: 70px;
+  }
 }
