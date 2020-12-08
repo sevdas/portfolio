@@ -1,12 +1,10 @@
-html {
+html,
+body {
   box-sizing: border-box;
   scroll-behavior: smooth;
-}
-
-body {
   max-width: 100%;
   height: auto;
-  margin: 0 auto;
+  margin: 0;
   padding: 0px;
   font-family: "Cormorant Garamond", serif;
 }
@@ -20,13 +18,20 @@ body {
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
-  width: 100%;
+  min-width: 100%;
   height: 90px;
 }
 
+.personal-logo-figure {
+  width: 110px;
+  height: 70px;
+  margin-left: 1em;
+  margin-top: 0.1em;
+}
+
 #nav-bar img {
-  width: 120px;
-  height: 80px;
+  max-width: 100%;
+  height: auto;
 }
 
 .menu ul {
@@ -162,10 +167,8 @@ body {
 
 .carousel-wrapper {
   height: 50vh;
-  width: 65%;
+  max-width: 65%;
   margin: 0 auto;
-  overflow: hidden;
-  position: relative;
   overflow: hidden;
   position: relative;
 }
@@ -179,18 +182,30 @@ body {
 .carousel-slide {
   position: absolute;
   top: 0;
+  left: 0;
   width: 100%;
 }
 
 .carousel-figure {
+  position: relative;
+  top: 0;
   margin: 0 auto;
   /* Tinting */
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
 }
 
+.visible {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
 .carousel-image {
   max-width: 100%;
   min-height: 50vh;
+  height: auto;
   object-fit: cover;
   opacity: 0.4;
 }
@@ -221,7 +236,7 @@ figcaption h2 {
   line-height: 1.5em;
 }
 
-.carousel-button {
+.controls button {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -232,25 +247,28 @@ figcaption h2 {
   font-size: 2.5em;
   opacity: 0.6;
 }
-
-.carousel-button:hover {
+.controls button:hover {
   text-shadow: 3px 2px 1px rgb(68, 68, 68);
 }
 
-.carousel-button:focus {
+.controls button:focus {
   outline: thin dotted rgb(68, 68, 68);
 }
 
 /* --(double hyphen) modifier of actual carousel button */
 .carousel-button--prev {
-  left: -60px;
+  left: 12%;
   z-index: 999;
 }
 
 .carousel-button--next {
-  right: -60px;
+  right: 12%;
   z-index: 999;
 }
+
+/* .is-hidden {
+  display: none;
+} */
 
 .thumbnail-wrapper {
   width: 65%;
@@ -482,13 +500,5 @@ textarea {
 
   .menu ul li {
     padding: 0 0.7em;
-  }
-}
-
-/* If the browser window is 768px or up */
-@media screen and (max-width: 768px) {
-  #nav-bar img {
-    width: 100px;
-    height: 70px;
   }
 }

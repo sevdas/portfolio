@@ -34,7 +34,7 @@
   <body>
     <header id="nav-bar">
       <a class="personal-logo" href="#">
-        <figure>
+        <figure class="personal-logo-figure">
           <img src="public/SS.Logo.png" alt="logo" />
         </figure>
       </a>
@@ -146,10 +146,9 @@
           <article class="carousel">
             <!-- &lt; → < (less-than sign, U+003C)
                &gt; → > (greater-than sign, U+003E) ESCAPES-->
-            <button class="carousel-button carousel-button--prev">&lt;</button>
             <div class="carousel-wrapper">
               <ul class="carousel-track-list">
-                <li class="carousel-slide current-slide">
+                <li class="carousel-slide visible">
                   <figure class="carousel-figure">
                     <img
                       class="carousel-image"
@@ -178,7 +177,7 @@
                     </figcaption>
                   </figure>
                 </li>
-                <li class="carousel-slide">
+                <li class="carousel-slide hidden">
                   <figure class="carousel-figure">
                     <img
                       class="carousel-image"
@@ -193,7 +192,7 @@
                     </figcaption>
                   </figure>
                 </li>
-                <li class="carousel-slide">
+                <li class="carousel-slide hidden">
                   <figure class="carousel-figure">
                     <img
                       class="carousel-image"
@@ -208,7 +207,7 @@
                     </figcaption>
                   </figure>
                 </li>
-                <li class="carousel-slide">
+                <li class="carousel-slide hidden">
                   <figure class="carousel-figure">
                     <img
                       class="carousel-image"
@@ -230,7 +229,7 @@
                     </figcaption>
                   </figure>
                 </li>
-                <li class="carousel-slide">
+                <li class="carousel-slide hidden">
                   <figure class="carousel-figure">
                     <img
                       class="carousel-image"
@@ -245,7 +244,7 @@
                     </figcaption>
                   </figure>
                 </li>
-                <li class="carousel-slide">
+                <li class="carousel-slide hidden">
                   <figure class="carousel-figure">
                     <img
                       class="carousel-image"
@@ -260,7 +259,7 @@
                     </figcaption>
                   </figure>
                 </li>
-                <li class="carousel-slide">
+                <li class="carousel-slide hidden">
                   <figure class="carousel-figure">
                     <img
                       class="carousel-image"
@@ -278,7 +277,7 @@
                     </figcaption>
                   </figure>
                 </li>
-                <li class="carousel-slide">
+                <li class="carousel-slide hidden">
                   <figure class="carousel-figure">
                     <img
                       class="carousel-image"
@@ -300,7 +299,7 @@
                     </figcaption>
                   </figure>
                 </li>
-                <li class="carousel-slide">
+                <li class="carousel-slide hidden">
                   <figure class="carousel-figure">
                     <img
                       class="carousel-image"
@@ -320,7 +319,7 @@
                     </figcaption>
                   </figure>
                 </li>
-                <li class="carousel-slide">
+                <li class="carousel-slide hidden">
                   <figure class="carousel-figure">
                     <img
                       class="carousel-image"
@@ -335,7 +334,7 @@
                     </figcaption>
                   </figure>
                 </li>
-                <li class="carousel-slide">
+                <li class="carousel-slide hidden">
                   <figure class="carousel-figure">
                     <img
                       class="carousel-image"
@@ -352,7 +351,10 @@
                 </li>
               </ul>
             </div>
-            <button class="carousel-button carousel-button--next">&gt;</button>
+            <aside class="controls">
+              <button class="carousel-button--prev is-hidden">&lt;</button>
+              <button class="carousel-button--next">&gt;</button>
+            </aside>
             <!-- Thumbnail -->
             <aside class="thumbnail-wrapper">
               <ul class="thumbnail-track-list">
