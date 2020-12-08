@@ -176,7 +176,7 @@ body {
 .carousel-track-list {
   margin: 0 auto;
   list-style: none;
-  transition: all 0.6s ease-out;
+  transition: all 0.5s ease-out;
 }
 
 .carousel-slide {
@@ -266,9 +266,9 @@ figcaption h2 {
   z-index: 999;
 }
 
-/* .is-hidden {
+.hidden {
   display: none;
-} */
+}
 
 .thumbnail-wrapper {
   width: 65%;

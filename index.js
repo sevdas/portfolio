@@ -71,7 +71,7 @@ let currentIndex = 0
 
 //Check if 
 const checkLimits = () => {
-  if(currentIndex >  carouselSlides.length-1){
+  if(currentIndex > carouselSlides.length-1){
     currentIndex = 0
   } else if(currentIndex < 0 ){
     currentIndex = carouselSlides.length-1
@@ -86,6 +86,7 @@ currentIndex++
 checkLimits()
 carouselSlides[currentIndex].classList.add('visible')
 carouselSlides[currentIndex].classList.remove('hidden')
+displayOnOffArrowButton(currentIndex)
 console.log(currentIndex)
 })  
 
@@ -98,4 +99,20 @@ currentIndex--
 checkLimits()
 carouselSlides[currentIndex].classList.add('visible')
 carouselSlides[currentIndex].classList.remove('hidden')
+displayOnOffArrowButton(currentIndex)
+console.log(currentIndex)
 })
+
+// Display or hide carousel arrow button when all the way to the left or right. 
+function displayOnOffArrowButton(currentIndex){
+ if(currentIndex === 0){
+  prevButton.classList.add('hidden')
+  nextButton.classList.remove('hidden')
+ } else if(currentIndex >= carouselSlides.length-1){
+  nextButton.classList.add('hidden')
+  prevButton.classList.remove('hidden')
+ } else {
+  prevButton.classList.remove('hidden')
+  nextButton.classList.remove('hidden')
+ }
+}
