@@ -171,6 +171,7 @@ body {
   margin: 0 auto;
   overflow: hidden;
   position: relative;
+  left: 0;
 }
 
 .carousel-track-list {
@@ -303,11 +304,6 @@ figcaption h2 {
 .thumbnail-slide:hover {
   border-radius: 10px;
   filter: opacity(70%);
-}
-
-.current-thumb-slide {
-  filter: opacity(40%);
-  border-radius: 50px;
 }
 
 #contact {
