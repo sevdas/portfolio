@@ -84,10 +84,17 @@ const checkLimits = () => {
 nextButton.addEventListener('click', function nextImage() { 
 carouselSlides[currentIndex].classList.remove('visible')
 carouselSlides[currentIndex].classList.add('hidden')
+ // Reset styling
+thumbnailSlideImages[currentIndex].style.filter = 'opacity(100%)'
+thumbnailSlideImages[currentIndex].style.borderRadius = '0px'
 currentIndex++
 checkLimits()
 carouselSlides[currentIndex].classList.add('visible')
 carouselSlides[currentIndex].classList.remove('hidden')
+//Display styling
+thumbnailSlideImages[currentIndex].style.filter = 'opacity(40%)'
+thumbnailSlideImages[currentIndex].style.borderRadius = '50px'
+
 displayOnOffArrowButton(currentIndex)
 })  
 
@@ -96,10 +103,17 @@ displayOnOffArrowButton(currentIndex)
     prevButton.addEventListener('click', function prevImage() { 
     carouselSlides[currentIndex].classList.remove('visible')
     carouselSlides[currentIndex].classList.add('hidden')
+    // Reset styling
+    thumbnailSlideImages[currentIndex].style.filter = 'opacity(100%)'
+    thumbnailSlideImages[currentIndex].style.borderRadius = '0px'
     currentIndex--
     checkLimits()
     carouselSlides[currentIndex].classList.add('visible')
     carouselSlides[currentIndex].classList.remove('hidden')
+     //Display styling
+    thumbnailSlideImages[currentIndex].style.filter = 'opacity(40%)'
+    thumbnailSlideImages[currentIndex].style.borderRadius = '50px'
+
     displayOnOffArrowButton(currentIndex)
   })
   
@@ -125,8 +139,6 @@ const thumbnailTrackList = document.querySelector('.thumbnail-track-list')
 const thumbnailSlideImages = document.querySelectorAll('.thumbnail-slide img')
 const thumbImages = document.querySelectorAll('.thumbnail-image')
 let currentThumbImage = document.querySelector('.current')
-console.log(currentThumbImage)
-
 
 
 //Set first image style
@@ -137,6 +149,7 @@ thumbnailSlideImages[0].style.borderRadius = '50px'
   thumbnailSlideImages.forEach(thumbImg => 
   thumbImg.addEventListener('click',function (event){
      event.target //event on click 
+     console.log(event.target)
 
   //Reset the styling
   thumbnailSlideImages.forEach(thumbImg => 
@@ -144,6 +157,7 @@ thumbnailSlideImages[0].style.borderRadius = '50px'
   //Set styling
   thumbImg.style.filter = 'opacity(40%)'
   thumbImg.style.borderRadius = '50px'
+
 
   const targetImageIndex = 
   Array.from(thumbnailSlideImages).findIndex(thumbImg => thumbImg === event.target)
@@ -157,6 +171,7 @@ thumbnailSlideImages[0].style.borderRadius = '50px'
    carouselSlides[targetImageIndex].classList.add('visible')
    //Active prev and next buttons per thumb start index
    currentIndex = targetImageIndex
+  
 
 }, false))
 
