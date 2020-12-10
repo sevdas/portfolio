@@ -154,6 +154,9 @@ thumbnailSlideImages.forEach(thumbImg =>
    carouselSlides[targetImageIndex].classList.remove('hidden')
    carouselSlides[targetImageIndex].classList.add('visible')
 
+   //Display prev and next arrows when thumb image clicked
+   displayOnOffArrowButton(targetImageIndex)
+
 }, false))
 
 
