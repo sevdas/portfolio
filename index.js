@@ -133,8 +133,8 @@ console.log(currentThumbImage)
 thumbnailSlideImages[0].style.filter = 'opacity(40%)'
 thumbnailSlideImages[0].style.borderRadius = '50px'
 
-// Add event listener to each image element
-thumbnailSlideImages.forEach(thumbImg => 
+  // Add event listener to each image element
+  thumbnailSlideImages.forEach(thumbImg => 
   thumbImg.addEventListener('click',function (event){
      event.target //event on click 
 
@@ -150,16 +150,13 @@ thumbnailSlideImages.forEach(thumbImg =>
 
    //Reset carousel slide visibility
    carouselSlides.forEach(slide => slide.classList.add('hidden'))
+   //Display prev and next arrows when thumb image is clicked
+   displayOnOffArrowButton(targetImageIndex)
    //Display carousel slide to source of clicked thumb image
    carouselSlides[targetImageIndex].classList.remove('hidden')
    carouselSlides[targetImageIndex].classList.add('visible')
-
-   //Display prev and next arrows when thumb image clicked
-   displayOnOffArrowButton(targetImageIndex)
+   //Active prev and next buttons per thumb start index
+   currentIndex = targetImageIndex
 
 }, false))
 
-
-  
-
-    //Display on off prev, next clicks. 
