@@ -138,8 +138,6 @@ function displayOnOffArrowButton(currentIndex){
 const thumbnailTrackList = document.querySelector('.thumbnail-track-list')
 const thumbnailSlideImages = document.querySelectorAll('.thumbnail-slide img')
 const thumbImages = document.querySelectorAll('.thumbnail-image')
-let currentThumbImage = document.querySelector('.current')
-
 
 //Set first image style
 thumbnailSlideImages[0].style.filter = 'opacity(40%)'
@@ -162,7 +160,7 @@ thumbnailSlideImages[0].style.borderRadius = '50px'
   const targetImageIndex = 
   Array.from(thumbnailSlideImages).findIndex(thumbImg => thumbImg === event.target)
 
-   //Reset carousel slide visibility
+   //Reset carousel slides visibility
    carouselSlides.forEach(slide => slide.classList.add('hidden'))
    //Display prev and next arrows when thumb image is clicked
    displayOnOffArrowButton(targetImageIndex)
@@ -173,5 +171,5 @@ thumbnailSlideImages[0].style.borderRadius = '50px'
    currentIndex = targetImageIndex
   
 
-}, false))
+}))
 

@@ -157,6 +157,8 @@ body {
   width: 65%;
   line-height: 1.2em;
   opacity: 0.7;
+  font-family: "Comfortaa", cursive;
+  font-size: 0.8em;
 }
 
 .carousel {
@@ -177,7 +179,7 @@ body {
 .carousel-track-list {
   margin: 0 auto;
   list-style: none;
-  transition: all 0.5s ease-out;
+  transition: all 0.6s ease-out;
 }
 
 .carousel-slide {
@@ -217,7 +219,7 @@ body {
 
 figcaption {
   position: absolute;
-  padding: 1em 2em;
+  padding: 2em 2em;
   top: 0;
   color: #f4f6ef;
   text-align: center;
@@ -397,7 +399,6 @@ span {
   margin: 0 auto;
   padding: 1em;
   background: rgb(0, 0, 0, 0.05);
-  width: 85%;
   border-radius: 2%;
 }
 
@@ -422,7 +423,8 @@ textarea {
   font: 1em "Cormorant Garamond", serif;
   box-sizing: border-box;
   height: 2em;
-  width: 100%;
+  min-width: 100%;
+  /* width: 25vw; */
   border-color: #f4f6ef;
   border-radius: 3px;
   border-style: solid;
@@ -496,5 +498,50 @@ textarea {
 
   .menu ul li {
     padding: 0 0.7em;
+  }
+  .carousel-button--prev {
+    left: 5%;
+  }
+
+  .carousel-button--next {
+    right: 5%;
+  }
+
+  figcaption {
+    font-size: 0.4em;
+    padding: 3em 2em;
+  }
+
+  .contact-form {
+    width: 85%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .carousel-figure {
+    font-size: 0.55em;
+  }
+
+  input,
+  textarea {
+    width: 40vw;
+    min-width: 100%;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .carousel-figure {
+    font-size: 0.7em;
+  }
+  input,
+  textarea {
+    width: 28vw;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  input,
+  textarea {
+    width: 28vw;
   }
 }
