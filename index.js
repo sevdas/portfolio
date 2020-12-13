@@ -3,11 +3,7 @@
 // right way but making things work and then improving them so they work.  
 
 
-//MOODY FACE ELEMENTS
-const happyFace = document.querySelector('#face-happy')
-const sadFace = document.querySelector('#face-sad')
-const homeSection = document.querySelector('#home')
-const bubbleMessage = document.querySelector('#talkbubble')
+
 // Parent Element
 const helloMessage = document.getElementById('changing-message-aside')
 
@@ -35,6 +31,12 @@ setTimeout(typeWriterWelcome, 100)
 typeWriterWelcome()
 
 
+//MOODY FACE ELEMENTS
+const happyFace = document.querySelector('#face-happy')
+const sadFace = document.querySelector('#face-sad')
+const homeSection = document.querySelector('#home')
+const bubbleMessage = document.querySelector('#talkbubble')
+
 //MOODY FACE
 sadFace.style.display='none'
 let count = 0 //Start point
@@ -47,12 +49,12 @@ function moodyFace() {
 
        homeSection.style.background = '#f4f6ef'
        bubbleMessage.textContent = "Now you know! Scroll down!" 
+
    } else {
        happyFace.style.display='none'
        sadFace.style.display='block'
        homeSection.style.background  = 'black' 
        bubbleMessage.textContent = 'I can not see you! :/ Switch back please!'
-      //  helloMessage.style.color = 'white'
    }
 }
 
