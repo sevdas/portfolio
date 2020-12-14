@@ -64,7 +64,7 @@ body {
 .home-container {
   font-family: "Comfortaa", cursive;
   margin: 0 auto;
-  padding-top: 20%;
+  padding-top: 22.5%;
   max-width: 700px;
   height: auto;
 }
@@ -112,7 +112,7 @@ body {
   justify-content: center;
   align-items: center;
   line-height: 1.4em;
-  margin-top: 25%;
+  margin-top: 15%;
 }
 
 #about {
@@ -448,13 +448,15 @@ textarea {
   letter-spacing: 0.2em;
 }
 
+/* If the browser window is 375px or higher */
 @media screen and (min-width: 375px) {
   .changing-message {
     position: absolute;
-    margin: -30px 30px;
+    margin: -30px 27.5px;
   }
 }
 
+/* If the browser window is 425px or higher */
 @media screen and (min-width: 425px) {
   .changing-message {
     position: absolute;
@@ -473,28 +475,41 @@ textarea {
     height: 70px;
   }
 
-  .footer {
-    font-size: 10px;
-    letter-spacing: 0.1em;
+  .home-container {
+    padding-top: 50%;
   }
 
-  .personal-image {
-    width: 200px;
+  #face-happy,
+  #face-sad {
+    flex: 0 1 200px;
+    min-width: 100px;
   }
 
-  .wrapper-contact {
+  .wrapper-face {
     flex-wrap: wrap;
-    flex-direction: column;
   }
 
-  hr {
-    width: 40%;
-    height: 3px;
-    align-items: center;
+  .changing-message-letter {
+    height: 280px;
   }
 
-  .media-links {
-    padding-left: 1.5em;
+  .bubble {
+    flex: 0 1 180px;
+    height: 20px;
+  }
+
+  #talkbubble {
+    font-size: 0.85em;
+    padding-left: 10px;
+  }
+
+  .bubble:after {
+    content: "";
+    position: absolute;
+    border-right: 1.7em solid purple;
+    border-top: 3em solid transparent;
+    bottom: 100%;
+    left: 10%;
   }
 
   .intro h1 {
@@ -515,6 +530,12 @@ textarea {
   .menu ul li {
     padding: 0 0.7em;
   }
+
+  figcaption {
+    font-size: 0.5em;
+    padding: 3em 2em;
+  }
+
   .carousel-button--prev {
     left: 5%;
   }
@@ -523,62 +544,44 @@ textarea {
     right: 5%;
   }
 
-  figcaption {
-    font-size: 0.45em;
-    padding: 3em 2em;
+  .wrapper-contact {
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
+  hr {
+    width: 40%;
+    height: 3px;
+    align-items: center;
+  }
+
+  .media-links {
+    padding-left: 1.5em;
   }
 
   .contact-form {
     width: 85%;
   }
 
-  #face-happy,
-  #face-sad {
-    flex: 0 1 200px;
-    min-width: 100px;
+  .personal-image {
+    width: 200px;
   }
 
-  .wrapper-face {
-    flex-wrap: wrap;
-  }
-
-  .bubble {
-    flex: 0 1 180px;
-    height: 20px;
-  }
-
-  #talkbubble {
-    font-size: 0.85em;
-  }
-
-  .bubble:after {
-    content: "";
-    position: absolute;
-    border-right: 1.7em solid purple;
-    border-top: 3em solid transparent;
-    bottom: 100%;
-    left: 10%;
-  }
-
-  .changing-message-letter {
-    height: 280px;
+  .footer {
+    font-size: 10px;
+    letter-spacing: 0.1em;
   }
 }
 
+/* If the browser window is 768px or smaller */
 @media screen and (min-width: 768px) {
-  .carousel-figure {
-    font-size: 0.55em;
-  }
-
-  input,
-  textarea {
-    width: 40vw;
-    min-width: 100%;
-  }
-
   .changing-message {
     position: absolute;
     margin: -30px 0px;
+  }
+
+  .bubble {
+    margin-top: 25%;
   }
 
   .bubble:after {
@@ -589,12 +592,27 @@ textarea {
     border-right: 3em solid purple;
     border-bottom: 1.7em solid transparent;
   }
-}
 
+  .carousel-figure {
+    font-size: 0.55em;
+  }
+
+  figcaption {
+    font-size: 0.8em;
+  }
+
+  input,
+  textarea {
+    width: 40vw;
+    min-width: 100%;
+  }
+}
+/* If the browser window is 992px or smaller */
 @media screen and (min-width: 992px) {
   .carousel-figure {
-    font-size: 0.7em;
+    font-size: 0.9em;
   }
+
   input,
   textarea {
     width: 28vw;
@@ -603,6 +621,6 @@ textarea {
 
 @media only screen and (min-width: 1200px) {
   .carousel-figure {
-    font-size: 0.9em;
+    font-size: 1.2em;
   }
 }

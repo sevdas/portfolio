@@ -17,9 +17,8 @@ function typeWriterWelcome(){
   if (innerTextArray.length > idx) {
     const helloMsgLetter = document.createElement('p')
     helloMsgLetter.classList.add('changing-message-letter')
-    console.log(helloMsgLetter)
     helloMsgLetter.innerText = innerTextArray[idx]
-    helloMsgLetter.style.transform = `rotate(${(-120)+idx*8}deg) `
+    helloMsgLetter.style.transform = `rotate(${(-115)+idx*8}deg) `
     document.getElementById('changing-message-aside').appendChild(helloMsgLetter)
     idx++
 }
