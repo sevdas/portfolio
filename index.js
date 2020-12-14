@@ -14,19 +14,16 @@ const innerTextArray = helloMessageInnerText.split('')
 
 let idx = 0;
 function typeWriterWelcome(){ 
-if(innerTextArray.length > idx){
-  const helloMsgLetter = document.createElement('p')
-  helloMsgLetter.innerText = innerTextArray[idx]
-  helloMsgLetter.style.position = 'absolute'
-  helloMsgLetter.style.left = '50%'
-  helloMsgLetter.style.height = '360px'
-  helloMsgLetter.style.margin = '0'
-
-  document.getElementById('changing-message-aside').appendChild(helloMsgLetter)
-  helloMsgLetter.style.transform = `rotate(${(-120)+idx*8}deg) `
-  idx++
-setTimeout(typeWriterWelcome, 100)
+  if (innerTextArray.length > idx) {
+    const helloMsgLetter = document.createElement('p')
+    helloMsgLetter.classList.add('changing-message-letter')
+    console.log(helloMsgLetter)
+    helloMsgLetter.innerText = innerTextArray[idx]
+    helloMsgLetter.style.transform = `rotate(${(-120)+idx*8}deg) `
+    document.getElementById('changing-message-aside').appendChild(helloMsgLetter)
+    idx++
 }
+setTimeout(typeWriterWelcome, 100)
 }
 typeWriterWelcome()
 
