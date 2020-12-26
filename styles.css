@@ -98,6 +98,7 @@ body {
 #face-happy,
 #face-sad {
   min-width: 300px;
+  width: 300px;
   z-index: 2;
 }
 
@@ -113,6 +114,10 @@ body {
   align-items: center;
   line-height: 1.4em;
   margin-top: 15%;
+}
+
+#talkbubble {
+  text-decoration: underline;
 }
 
 #about {
@@ -247,12 +252,12 @@ figcaption h2 {
 
 /* --(double hyphen) modifier of actual carousel button */
 .carousel-button--prev {
-  left: 12%;
+  left: 2em;
   z-index: 999;
 }
 
 .carousel-button--next {
-  right: 12%;
+  right: 2em;
   z-index: 999;
 }
 
@@ -448,19 +453,39 @@ textarea {
   letter-spacing: 0.2em;
 }
 
+/* If the browser window is 280px or higher */
+@media screen and (min-width: 280px) {
+  .changing-message {
+    position: absolute;
+    margin: -30px 30px;
+  }
+
+  #changing-message-aside {
+    width: 250px;
+  }
+}
+
 /* If the browser window is 375px or higher */
 @media screen and (min-width: 375px) {
   .changing-message {
     position: absolute;
-    margin: -30px 27.5px;
+    margin: -30px 55px;
   }
 }
 
-/* If the browser window is 425px or higher */
-@media screen and (min-width: 425px) {
+/* If the browser window is 395px or higher */
+@media screen and (min-width: 395px) {
   .changing-message {
     position: absolute;
-    margin: -30px 50px;
+    margin: -30px 68px;
+  }
+}
+
+/* If the browser window is 420px or higher */
+@media screen and (min-width: 420px) {
+  .changing-message {
+    position: absolute;
+    margin: -30px 80px;
   }
 }
 
@@ -518,7 +543,7 @@ textarea {
   }
 
   .intro p {
-    font-size: 0.55em;
+    font-size: 0.8em;
     padding-right: 10px;
   }
 
@@ -536,12 +561,16 @@ textarea {
     padding: 3em 2em;
   }
 
+  .controls button {
+    font-size: 2.15em;
+  }
+
   .carousel-button--prev {
-    left: 5%;
+    left: 0.5em;
   }
 
   .carousel-button--next {
-    right: 5%;
+    right: 0.5em;
   }
 
   .wrapper-contact {
@@ -577,7 +606,7 @@ textarea {
 @media screen and (min-width: 768px) {
   .changing-message {
     position: absolute;
-    margin: -30px 0px;
+    margin: -30px 15px;
   }
 
   .bubble {
@@ -593,7 +622,7 @@ textarea {
     border-bottom: 1.7em solid transparent;
   }
 
-  .carousel-figure {
+  .additional {
     font-size: 0.55em;
   }
 
@@ -609,7 +638,7 @@ textarea {
 }
 /* If the browser window is 992px or smaller */
 @media screen and (min-width: 992px) {
-  .carousel-figure {
+  .additional {
     font-size: 0.9em;
   }
 
@@ -619,8 +648,9 @@ textarea {
   }
 }
 
+/* If the browser window is 1200px or smaller */
 @media only screen and (min-width: 1200px) {
-  .carousel-figure {
+  .additional {
     font-size: 1.2em;
   }
 }
