@@ -566,11 +566,11 @@ textarea {
   }
 
   .carousel-button--prev {
-    left: 0.5em;
+    left: 0.025em;
   }
 
   .carousel-button--next {
-    right: 0.5em;
+    right: 0.025em;
   }
 
   .wrapper-contact {
