@@ -83,14 +83,14 @@ nextButton.addEventListener('click', function nextImage() {
 carouselSlides[currentIndex].classList.remove('visible')
 carouselSlides[currentIndex].classList.add('hidden')
  // Reset styling
-thumbnailSlideImages[currentIndex].style.filter = 'opacity(100%)'
+thumbnailSlideImages[currentIndex].style.filter = 'opacity(40%)'
 thumbnailSlideImages[currentIndex].style.borderRadius = '0px'
 currentIndex++
 checkLimits()
 carouselSlides[currentIndex].classList.add('visible')
 carouselSlides[currentIndex].classList.remove('hidden')
 //Display styling
-thumbnailSlideImages[currentIndex].style.filter = 'opacity(40%)'
+thumbnailSlideImages[currentIndex].style.filter = 'opacity(100%)'
 thumbnailSlideImages[currentIndex].style.borderRadius = '50px'
 
 displayOnOffArrowButton(currentIndex)
@@ -102,14 +102,14 @@ displayOnOffArrowButton(currentIndex)
     carouselSlides[currentIndex].classList.remove('visible')
     carouselSlides[currentIndex].classList.add('hidden')
     // Reset styling
-    thumbnailSlideImages[currentIndex].style.filter = 'opacity(100%)'
+    thumbnailSlideImages[currentIndex].style.filter = 'opacity(40%)'
     thumbnailSlideImages[currentIndex].style.borderRadius = '0px'
     currentIndex--
     checkLimits()
     carouselSlides[currentIndex].classList.add('visible')
     carouselSlides[currentIndex].classList.remove('hidden')
      //Display styling
-    thumbnailSlideImages[currentIndex].style.filter = 'opacity(40%)'
+    thumbnailSlideImages[currentIndex].style.filter = 'opacity(100%)'
     thumbnailSlideImages[currentIndex].style.borderRadius = '50px'
 
     displayOnOffArrowButton(currentIndex)
@@ -138,20 +138,20 @@ const thumbnailSlideImages = document.querySelectorAll('.thumbnail-slide img')
 const thumbImages = document.querySelectorAll('.thumbnail-image')
 
 //Set first image style
-thumbnailSlideImages[0].style.filter = 'opacity(40%)'
+thumbnailSlideImages.forEach(image => image.style.filter = 'opacity(40%)')
+thumbnailSlideImages[0].style.filter = 'opacity(100%)'
 thumbnailSlideImages[0].style.borderRadius = '50px'
 
   // Add event listener to each image element
   thumbnailSlideImages.forEach(thumbImg => 
   thumbImg.addEventListener('click',function (event){
      event.target //event on click 
-     console.log(event.target)
 
   //Reset the styling
   thumbnailSlideImages.forEach(thumbImg => 
-  (thumbImg.style.filter = 'opacity(100%)') && (thumbImg.style.borderRadius = '0px'))
+  (thumbImg.style.filter = 'opacity(40%)') && (thumbImg.style.borderRadius = '0px'))
   //Set styling
-  thumbImg.style.filter = 'opacity(40%)'
+  thumbImg.style.filter = 'opacity(100%)'
   thumbImg.style.borderRadius = '50px'
 
 
