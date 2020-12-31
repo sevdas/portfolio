@@ -46,7 +46,7 @@ body {
 
 .menu ul li a {
   text-decoration: none;
-  color: #3c474d;
+  color: #f4f6ef;
   font-size: 1.1em;
   font-family: "Segoe UI";
 }
@@ -157,6 +157,7 @@ body {
   opacity: 0.7;
   font-family: "Comfortaa", cursive;
   font-size: 0.8em;
+  word-spacing: 0.1em;
 }
 
 .carousel {
@@ -207,7 +208,8 @@ body {
   min-height: 50vh;
   height: auto;
   object-fit: cover;
-  opacity: 0.4;
+  opacity: 0.5;
+  background: rgba(0, 0, 0, 0.8);
 }
 
 figcaption {
@@ -224,11 +226,13 @@ figcaption h2 {
   text-transform: uppercase;
   display: inline-block;
   padding: 3em 2em;
+  font-weight: 800;
 }
 
 .additional {
   font-family: "Comfortaa", cursive;
-  font-size: 0.95em;
+  /* font: 12px "Source Sans Pro", sans-serif; */
+  font-size: 0.9em;
   line-height: 1.5em;
 }
 
@@ -270,7 +274,6 @@ figcaption h2 {
   width: 65%;
   height: auto;
   margin: 0 auto;
-  padding-top: 0.2%;
 }
 
 .thumbnail-track-list {
@@ -280,20 +283,18 @@ figcaption h2 {
   list-style-type: none;
   /* rearrange spaces between li tags*/
   display: flex;
-}
-
-.thumbnail-slide {
-  height: 15vh;
-  width: 100%;
+  padding-top: 1.5px;
 }
 
 .thumbnail-slide img {
   max-width: 97%;
   height: 10vh;
-  display: flex;
-  margin: 0 auto;
   object-fit: cover;
   cursor: pointer;
+}
+
+.thumbnail-slide #thumbnail-image-last {
+  max-width: 100%;
 }
 
 #contact {
@@ -597,6 +598,14 @@ textarea {
     font-size: 10px;
     letter-spacing: 0.1em;
   }
+
+  .thumbnail-slide img {
+    height: 6vh;
+  }
+
+  .thumbnail-slide img {
+    max-width: 95%;
+  }
 }
 
 /* If the browser window is 768px or smaller */
@@ -620,10 +629,10 @@ textarea {
     border-bottom: 1.7em solid transparent;
   }
 
-  .additional {
+  /* .additional {
     font-size: 0.7em;
     margin-top: -25px;
-  }
+  } */
 
   figcaption {
     font-size: 0.82em;
@@ -644,9 +653,9 @@ textarea {
 }
 
 /* If the browser window is 1200px or smaller */
-@media only screen and (min-width: 1200px) {
+/* @media only screen and (min-width: 1200px) {
   .additional {
     font-size: 1em;
     margin-top: -20px;
   }
-}
+} */

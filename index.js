@@ -83,7 +83,7 @@ nextButton.addEventListener('click', function nextImage() {
 carouselSlides[currentIndex].classList.remove('visible')
 carouselSlides[currentIndex].classList.add('hidden')
  // Reset styling
-thumbnailSlideImages[currentIndex].style.filter = 'opacity(40%)'
+thumbnailSlideImages[currentIndex].style.filter = 'opacity(25%)'
 thumbnailSlideImages[currentIndex].style.borderRadius = '0px'
 currentIndex++
 checkLimits()
@@ -102,7 +102,7 @@ displayOnOffArrowButton(currentIndex)
     carouselSlides[currentIndex].classList.remove('visible')
     carouselSlides[currentIndex].classList.add('hidden')
     // Reset styling
-    thumbnailSlideImages[currentIndex].style.filter = 'opacity(40%)'
+    thumbnailSlideImages[currentIndex].style.filter = 'opacity(25%)'
     thumbnailSlideImages[currentIndex].style.borderRadius = '0px'
     currentIndex--
     checkLimits()
@@ -136,9 +136,10 @@ function displayOnOffArrowButton(currentIndex){
 const thumbnailTrackList = document.querySelector('.thumbnail-track-list')
 const thumbnailSlideImages = document.querySelectorAll('.thumbnail-slide img')
 const thumbImages = document.querySelectorAll('.thumbnail-image')
+console.log(thumbImages)
 
 //Set first image style
-thumbnailSlideImages.forEach(image => image.style.filter = 'opacity(40%)')
+thumbnailSlideImages.forEach(image => image.style.filter = 'opacity(25%)')
 thumbnailSlideImages[0].style.filter = 'opacity(100%)'
 thumbnailSlideImages[0].style.borderRadius = '50px'
 
@@ -149,7 +150,7 @@ thumbnailSlideImages[0].style.borderRadius = '50px'
 
   //Reset the styling
   thumbnailSlideImages.forEach(thumbImg => 
-  (thumbImg.style.filter = 'opacity(40%)') && (thumbImg.style.borderRadius = '0px'))
+  (thumbImg.style.filter = 'opacity(25%)') && (thumbImg.style.borderRadius = '0px'))
   //Set styling
   thumbImg.style.filter = 'opacity(100%)'
   thumbImg.style.borderRadius = '50px'
