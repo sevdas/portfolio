@@ -136,25 +136,21 @@ const thumbnailSlideImages = document.querySelectorAll('.thumbnail-slide img')
 const thumbImages = document.querySelectorAll('.thumbnail-image')
 
 
-//Set first image style
+//Set default image style
 thumbnailSlideImages.forEach(image => image.style.filter = 'opacity(25%)')
-
 thumbnailSlideImages[0].style.filter = 'opacity(100%)'
 thumbnailSlideImages[0].style.borderRadius = '50px'
-
 
   // Add event listener to each image element
   thumbnailSlideImages.forEach(thumbImg => 
   thumbImg.addEventListener('click',function (event){
-     event.target //event on click 
-
+  event.target //event on click 
   //Reset the styling
   thumbnailSlideImages.forEach(thumbImg => 
   (thumbImg.style.filter = 'opacity(25%)') && (thumbImg.style.borderRadius = '0px'))
   //Set styling
   thumbImg.style.filter = 'opacity(100%)'
   thumbImg.style.borderRadius = '50px'
-
 
   const targetImageIndex = 
   Array.from(thumbnailSlideImages).findIndex(thumbImg => thumbImg === event.target)
@@ -171,18 +167,25 @@ thumbnailSlideImages[0].style.borderRadius = '50px'
 }))
 
 
-//Menu Navigation
-const menuItems = document.querySelectorAll('.menu-list a')
-console.log(menuItems)
 
+//MENU NAVIGATION
+const menuItems = document.querySelectorAll('.menu-list a')
+//Set item default style
 menuItems[1].style.opacity = '0.5'
 menuItems[2].style.opacity = '0.5'
 
-menuItems.forEach(menuItem => 
-  menuItem.addEventListener('click', function(event){
-    event.target
-    menuItem.style.opacity = '0.5'
-    menuItems.forEach(menuItem =>  menuItem.style.opacity = '0.5')
-    menuItem.style.opacity = '1'
-}))
+//Change item style when scrolling
+window.onscroll = function(){
+  const top = window.scrollY
+  console.log(top)
+  menuItems.forEach(menuItem => console.log(menuItem.style.opacity = '0.5'))
+  if(top >= 0 && top < 500 ){
+    menuItems[0].style.opacity  = '1'
+   } else if(top > 500 && top < 1500){
+    menuItems[1].style.opacity = '1'
+   } else if(top > 1500){
+    menuItems[2].style.opacity = '1'
+  }
+ }
+
 
