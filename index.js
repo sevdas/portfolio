@@ -79,8 +79,8 @@ const checkLimits = () => {
 }
 
 //When user clicks next button, move slides to the right. 
-nextButton.addEventListener('click', function nextImage() { 
-carouselSlides[currentIndex].classList.remove('visible')
+function nextImage(){
+  carouselSlides[currentIndex].classList.remove('visible')
 carouselSlides[currentIndex].classList.add('hidden')
  // Reset styling
 thumbnailSlideImages[currentIndex].style.filter = 'opacity(25%)'
@@ -94,10 +94,11 @@ thumbnailSlideImages[currentIndex].style.filter = 'opacity(100%)'
 thumbnailSlideImages[currentIndex].style.borderRadius = '50px'
 
 displayOnOffArrowButton(currentIndex)
-})  
+} 
+nextButton.addEventListener('click', nextImage)
 
 //When user clicks previous button, move slides to the left. 
-    prevButton.addEventListener('click', function prevImage() { 
+function prevImage(){
     carouselSlides[currentIndex].classList.remove('visible')
     carouselSlides[currentIndex].classList.add('hidden')
     // Reset styling
@@ -112,8 +113,24 @@ displayOnOffArrowButton(currentIndex)
     thumbnailSlideImages[currentIndex].style.borderRadius = '50px'
 
     displayOnOffArrowButton(currentIndex)
-  })
+}
+prevButton.addEventListener('click', prevImage)
   
+//Run Carousel in set of intervals
+  let carouselInterval = setInterval(nextImage, 20000)
+  let playing = true
+
+  function playCarousel(){
+     if(!isPlaying){
+       isPlaying = true
+       carouselInterval = setInterval(nextImage, 20000) 
+     }
+  }
+
+  function replayCarousel(){
+    isPlaying = false
+    clearInterval(carouselInterval)
+  }
 
 // Display or hide carousel arrow button when all the way to the left or right. 
 function displayOnOffArrowButton(currentIndex){
@@ -134,7 +151,6 @@ function displayOnOffArrowButton(currentIndex){
 const thumbnailTrackList = document.querySelector('.thumbnail-track-list')
 const thumbnailSlideImages = document.querySelectorAll('.thumbnail-slide img')
 const thumbImages = document.querySelectorAll('.thumbnail-image')
-
 
 //Set default image style
 thumbnailSlideImages.forEach(image => image.style.filter = 'opacity(25%)')
@@ -187,5 +203,7 @@ window.onscroll = function(){
     menuItems[2].style.opacity = '1'
   }
  }
+
+
 
 
