@@ -96,7 +96,6 @@ thumbnailSlideImages[currentIndex].style.borderRadius = '50px'
 displayOnOffArrowButton(currentIndex)
 })  
 
-
 //When user clicks previous button, move slides to the left. 
     prevButton.addEventListener('click', function prevImage() { 
     carouselSlides[currentIndex].classList.remove('visible')
@@ -115,7 +114,6 @@ displayOnOffArrowButton(currentIndex)
     displayOnOffArrowButton(currentIndex)
   })
   
-
 
 // Display or hide carousel arrow button when all the way to the left or right. 
 function displayOnOffArrowButton(currentIndex){
@@ -136,12 +134,14 @@ function displayOnOffArrowButton(currentIndex){
 const thumbnailTrackList = document.querySelector('.thumbnail-track-list')
 const thumbnailSlideImages = document.querySelectorAll('.thumbnail-slide img')
 const thumbImages = document.querySelectorAll('.thumbnail-image')
-console.log(thumbImages)
+
 
 //Set first image style
 thumbnailSlideImages.forEach(image => image.style.filter = 'opacity(25%)')
+
 thumbnailSlideImages[0].style.filter = 'opacity(100%)'
 thumbnailSlideImages[0].style.borderRadius = '50px'
+
 
   // Add event listener to each image element
   thumbnailSlideImages.forEach(thumbImg => 
@@ -168,7 +168,21 @@ thumbnailSlideImages[0].style.borderRadius = '50px'
    carouselSlides[targetImageIndex].classList.add('visible')
    //Active prev and next buttons per thumb start index
    currentIndex = targetImageIndex
-  
+}))
 
+
+//Menu Navigation
+const menuItems = document.querySelectorAll('.menu-list a')
+console.log(menuItems)
+
+menuItems[1].style.opacity = '0.5'
+menuItems[2].style.opacity = '0.5'
+
+menuItems.forEach(menuItem => 
+  menuItem.addEventListener('click', function(event){
+    event.target
+    menuItem.style.opacity = '0.5'
+    menuItems.forEach(menuItem =>  menuItem.style.opacity = '0.5')
+    menuItem.style.opacity = '1'
 }))
 

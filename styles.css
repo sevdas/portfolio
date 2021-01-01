@@ -51,10 +51,6 @@ body {
   font-family: "Segoe UI";
 }
 
-.menu ul li :hover {
-  background: #f4f6ef;
-}
-
 #home {
   background-color: #f4f6ef;
   display: flex;
@@ -192,7 +188,7 @@ body {
   top: 0;
   margin: 0 auto;
   /* Tinting */
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5));
 }
 
 .visible {
@@ -208,8 +204,7 @@ body {
   min-height: 50vh;
   height: auto;
   object-fit: cover;
-  opacity: 0.5;
-  background: rgba(0, 0, 0, 0.8);
+  opacity: 0.3;
 }
 
 figcaption {
@@ -227,6 +222,8 @@ figcaption h2 {
   display: inline-block;
   padding: 3em 2em;
   font-weight: 800;
+  /* background-color: rgba(255, 255, 255, 0.2); */
+  /* color: rgb(20, 20, 20); */
 }
 
 .additional {
@@ -234,6 +231,8 @@ figcaption h2 {
   /* font: 12px "Source Sans Pro", sans-serif; */
   font-size: 0.9em;
   line-height: 1.5em;
+  /* background-color: rgba(255, 255, 255, 0.2); */
+  /* color: rgb(20, 20, 20); */
 }
 
 .controls button {
@@ -284,6 +283,10 @@ figcaption h2 {
   /* rearrange spaces between li tags*/
   display: flex;
   padding-top: 1.5px;
+}
+
+.thumbnail-slide {
+  height: 10vh;
 }
 
 .thumbnail-slide img {
