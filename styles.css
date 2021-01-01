@@ -383,7 +383,9 @@ span {
   color: #58b7d6;
   font-family: "Comfortaa", cursive;
   font-size: 14px;
-  font-weight: 600;
+  background: #f4f6ef;
+  background: rgba(246, 246, 239, 0.4);
+  padding: 2px;
 }
 
 /* Center the form on the page */
