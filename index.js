@@ -116,21 +116,34 @@ function prevImage(){
 }
 prevButton.addEventListener('click', prevImage)
   
-//Run Carousel in set of intervals
-  let carouselInterval = setInterval(nextImage, 20000)
+// Run Carousel in set of intervals
+  let carouselInterval = setInterval(nextImage, 3500)
   let playing = true
 
   function playCarousel(){
      if(!isPlaying){
        isPlaying = true
-       carouselInterval = setInterval(nextImage, 20000) 
+       carouselInterval = setInterval(nextImage, 3500) 
      }
   }
 
-  function replayCarousel(){
+  function stopCarousel(){
     isPlaying = false
     clearInterval(carouselInterval)
   }
+
+  //Set play and pause button on and off 
+  const playPauseButton = document.querySelector('.play-pause-button')
+  let counter = 0
+playPauseButton.addEventListener('click', function(){
+  counter++
+  if(counter % 2 === 0){
+    stopCarousel()
+  } else {
+    playCarousel()
+  }
+})
+
 
 // Display or hide carousel arrow button when all the way to the left or right. 
 function displayOnOffArrowButton(currentIndex){
@@ -193,8 +206,7 @@ menuItems[2].style.opacity = '0.5'
 //Change item style when scrolling
 window.onscroll = function(){
   const top = window.scrollY
-  console.log(top)
-  menuItems.forEach(menuItem => console.log(menuItem.style.opacity = '0.5'))
+  menuItems.forEach(menuItem => menuItem.style.opacity = '0.5')
   if(top >= 0 && top < 500 ){
     menuItems[0].style.opacity  = '1'
    } else if(top > 500 && top < 1500){
