@@ -229,6 +229,20 @@ figcaption h2 {
   line-height: 1.5em;
 }
 
+.play-pause-button {
+  background-color: transparent;
+  border: 0;
+}
+
+.play-pause {
+  max-width: 3vh;
+  height: 3vh;
+}
+
+.play-pause-button:focus {
+  outline: thin dotted #f4f6ef;
+}
+
 .controls-direction button {
   position: absolute;
   top: 50%;
@@ -249,19 +263,6 @@ figcaption h2 {
   outline: thin dotted rgb(68, 68, 68);
 }
 
-.play-pause-button {
-  background-color: transparent;
-  border: 0;
-}
-
-.play-pause-button:focus {
-  outline: thin dotted #f4f6ef;
-}
-
-.play-pause {
-  width: 2.5vh;
-  height: 2.5vh;
-}
 /* --(double hyphen) modifier of actual carousel button */
 .carousel-button--prev {
   left: 2em;
@@ -572,9 +573,9 @@ textarea {
     padding: 3em 2em;
   }
 
-  /* .controls-direction button {
+  .controls-direction button {
     font-size: 1.5em;
-  } */
+  }
 
   .carousel-button--prev {
     left: 0.025em;

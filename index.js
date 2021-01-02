@@ -42,15 +42,14 @@ function moodyFace() {
    if (count%2 === 0) {
     happyFace.style.display='block'
     sadFace.style.display='none'
-
-       homeSection.style.background = '#f4f6ef'
-       bubbleMessage.textContent = "Now you know! Scroll down!" 
+    homeSection.style.background = '#f4f6ef'
+    bubbleMessage.textContent = "Now you know! Scroll down!" 
 
    } else {
-       happyFace.style.display='none'
-       sadFace.style.display='block'
-       homeSection.style.background  = 'black' 
-       bubbleMessage.textContent = 'I can not see you! :/ Switch back please!'
+    happyFace.style.display='none'
+    sadFace.style.display='block'
+    homeSection.style.background  = 'black' 
+    bubbleMessage.textContent = 'I can not see you! :/ Switch back please!'
    }
 }
 
@@ -118,7 +117,7 @@ prevButton.addEventListener('click', prevImage)
   
 // Run Carousel in set of intervals
   let carouselInterval = setInterval(nextImage, 3500)
-  let playing = true
+  let isPlaying = true
 
   function playCarousel(){
      if(!isPlaying){
@@ -133,17 +132,19 @@ prevButton.addEventListener('click', prevImage)
   }
 
   //Set play and pause button on and off 
-  const playPauseButton = document.querySelector('.play-pause-button')
+  const playPauseButton = document.querySelectorAll('.play-pause-button img')
   let counter = 0
-playPauseButton.addEventListener('click', function(){
+
+playPauseButton.forEach(playPauseButton => 
+  playPauseButton.addEventListener('click', function(event){
   counter++
-  if(counter % 2 === 0){
+  if(counter % 2 === 1){
     stopCarousel()
+    console.log(counter)
   } else {
     playCarousel()
   }
-})
-
+}))
 
 // Display or hide carousel arrow button when all the way to the left or right. 
 function displayOnOffArrowButton(currentIndex){
