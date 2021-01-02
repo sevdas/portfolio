@@ -240,7 +240,7 @@ figcaption h2 {
 }
 
 .play-pause-button:focus {
-  outline: thin dotted #f4f6ef;
+  outline: none;
 }
 
 .controls-direction button {

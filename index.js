@@ -135,14 +135,15 @@ prevButton.addEventListener('click', prevImage)
   const playPauseButton = document.querySelectorAll('.play-pause-button img')
   let counter = 0
 
-playPauseButton.forEach(playPauseButton => 
-  playPauseButton.addEventListener('click', function(event){
+playPauseButton.forEach(eachPlayPauseButton => 
+  eachPlayPauseButton.addEventListener('click', function(){
   counter++
   if(counter % 2 === 1){
     stopCarousel()
-    console.log(counter)
+    eachPlayPauseButton.style.outline = 'thin dotted white'
   } else {
     playCarousel()
+    eachPlayPauseButton.style.outline = 'none'
   }
 }))
 
