@@ -461,7 +461,8 @@ textarea {
   height: auto;
   max-width: 100%;
   padding: 0.2em;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.25em;
+  word-spacing: 0.7em;
 }
 
 /* If the browser window is 280px or higher */
@@ -542,7 +543,6 @@ textarea {
   .bubble:after {
     content: "";
     position: absolute;
-    /* border-right: 1.7em solid purple; */
     border-right: 1.7em solid #58b7d6;
     border-top: 3em solid transparent;
     bottom: 100%;
@@ -638,15 +638,14 @@ textarea {
     position: absolute;
     right: 100%;
     top: 50%;
-    /* border-right: 3em solid purple; */
     border-right: 3em solid #58b7d6;
     border-bottom: 1.7em solid transparent;
   }
 
-  /* .additional {
+  .additional {
     font-size: 0.7em;
     margin-top: -25px;
-  } */
+  }
 
   figcaption {
     font-size: 0.82em;
@@ -667,9 +666,9 @@ textarea {
 }
 
 /* If the browser window is 1200px or smaller */
-/* @media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1200px) {
   .additional {
     font-size: 1em;
     margin-top: -20px;
   }
-} */
+}

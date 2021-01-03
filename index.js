@@ -2,15 +2,34 @@
 // Break it down to manegable pieces, experiment and make things work. It's not about doing things 
 // right way but making things work and then improving them so they work.  
 
+let count = 0 //Start point
 
 
-// Parent Element
-const helloMessage = document.getElementById('changing-message-aside')
+//MENU NAVIGATION
+const menuItems = document.querySelectorAll('.menu-list a')
+//Set item default style
+menuItems[1].style.opacity = '0.5'
+menuItems[2].style.opacity = '0.5'
+
+//Change item style when scrolling
+window.onscroll = function(){
+  const top = window.scrollY
+  menuItems.forEach(menuItem => menuItem.style.opacity = '0.5')
+  if(top >= 0 && top < 500 ){
+    menuItems[0].style.opacity  = '1'
+   } else if(top > 500 && top < 1500){
+    menuItems[1].style.opacity = '1'
+   } else if(top > 1500){
+    menuItems[2].style.opacity = '1'
+  }
+ }
 
 
 // TEXT ON A CIRCLE WELCOME TYPE EFFECT
 const helloMessageInnerText='Hello! Welcome to my world!'
 const innerTextArray = helloMessageInnerText.split('')
+// Parent Element
+const helloMessage = document.getElementById('changing-message-aside')
 
 let idx = 0;
 function typeWriterWelcome(){ 
@@ -27,16 +46,13 @@ setTimeout(typeWriterWelcome, 100)
 typeWriterWelcome()
 
 
-//MOODY FACE ELEMENTS
+//MOODY FACE
 const happyFace = document.querySelector('#face-happy')
 const sadFace = document.querySelector('#face-sad')
 const homeSection = document.querySelector('#home')
 const bubbleMessage = document.querySelector('#talkbubble')
 
-//MOODY FACE
 sadFace.style.display='none'
-let count = 0 //Start point
-
 function moodyFace() {
    count++
    if (count%2 === 0) {
@@ -44,7 +60,6 @@ function moodyFace() {
     sadFace.style.display='none'
     homeSection.style.background = '#f4f6ef'
     bubbleMessage.textContent = "Now you know! Scroll down!" 
-
    } else {
     happyFace.style.display='none'
     sadFace.style.display='block'
@@ -52,7 +67,6 @@ function moodyFace() {
     bubbleMessage.textContent = 'I can not see you! :/ Switch back please!'
    }
 }
-
 happyFace.addEventListener('click', moodyFace)
 sadFace.addEventListener('click', moodyFace)
 
@@ -63,82 +77,82 @@ const carouselSlides = document.querySelectorAll('.carousel-slide')
 const nextButton = document.querySelector('.carousel-button--next')
 const prevButton = document.querySelector('.carousel-button--prev')
 
-
 let currentIndex = 0 // Start point
 
-
 const checkLimits = () => {
-      // to prevent larger values than the slide length
+  // to prevent larger values than the slide length
   if(currentIndex > carouselSlides.length-1){
-    currentIndex = 0
-     // to avoide negative values
+  currentIndex = 0
+  // to avoide negative values
   } else if(currentIndex < 0 ){
-    currentIndex = carouselSlides.length-1
+  currentIndex = carouselSlides.length-1
   }
 }
 
 //When user clicks next button, move slides to the right. 
 function nextImage(){
   carouselSlides[currentIndex].classList.remove('visible')
-carouselSlides[currentIndex].classList.add('hidden')
- // Reset styling
-thumbnailSlideImages[currentIndex].style.filter = 'opacity(25%)'
-thumbnailSlideImages[currentIndex].style.borderRadius = '0px'
-currentIndex++
-checkLimits()
-carouselSlides[currentIndex].classList.add('visible')
-carouselSlides[currentIndex].classList.remove('hidden')
-//Display styling
-thumbnailSlideImages[currentIndex].style.filter = 'opacity(100%)'
-thumbnailSlideImages[currentIndex].style.borderRadius = '50px'
+  carouselSlides[currentIndex].classList.add('hidden')
+  // Reset styling
+  thumbnailSlideImages[currentIndex].style.filter = 'opacity(25%)'
+  thumbnailSlideImages[currentIndex].style.borderRadius = '0px'
+  currentIndex++
+  checkLimits()
+  carouselSlides[currentIndex].classList.add('visible')
+  carouselSlides[currentIndex].classList.remove('hidden')
+  //Display styling
+  thumbnailSlideImages[currentIndex].style.filter = 'opacity(100%)'
+  thumbnailSlideImages[currentIndex].style.borderRadius = '50px'
 
-displayOnOffArrowButton(currentIndex)
-} 
+  displayOnOffArrowButton(currentIndex)
+}  
 nextButton.addEventListener('click', nextImage)
+
 
 //When user clicks previous button, move slides to the left. 
 function prevImage(){
-    carouselSlides[currentIndex].classList.remove('visible')
-    carouselSlides[currentIndex].classList.add('hidden')
-    // Reset styling
-    thumbnailSlideImages[currentIndex].style.filter = 'opacity(25%)'
-    thumbnailSlideImages[currentIndex].style.borderRadius = '0px'
-    currentIndex--
-    checkLimits()
-    carouselSlides[currentIndex].classList.add('visible')
-    carouselSlides[currentIndex].classList.remove('hidden')
-     //Display styling
-    thumbnailSlideImages[currentIndex].style.filter = 'opacity(100%)'
-    thumbnailSlideImages[currentIndex].style.borderRadius = '50px'
+  carouselSlides[currentIndex].classList.remove('visible')
+  carouselSlides[currentIndex].classList.add('hidden')
+  // Reset styling
+  thumbnailSlideImages[currentIndex].style.filter = 'opacity(25%)'
+  thumbnailSlideImages[currentIndex].style.borderRadius = '0px'
+  currentIndex--
+  checkLimits()
+  carouselSlides[currentIndex].classList.add('visible')
+  carouselSlides[currentIndex].classList.remove('hidden')
+   //Display styling
+  thumbnailSlideImages[currentIndex].style.filter = 'opacity(100%)'
+  thumbnailSlideImages[currentIndex].style.borderRadius = '50px'
 
-    displayOnOffArrowButton(currentIndex)
+  displayOnOffArrowButton(currentIndex)
 }
 prevButton.addEventListener('click', prevImage)
-  
+ 
+
 // Run Carousel in set of intervals
-  let carouselInterval = setInterval(nextImage, 3500)
-  let isPlaying = true
+let carouselInterval = setInterval(nextImage, 3500)
+let isPlaying = true
 
-  function playCarousel(){
-     if(!isPlaying){
-       isPlaying = true
-       carouselInterval = setInterval(nextImage, 3500) 
-     }
+function playCarousel(){
+  if(!isPlaying){
+  isPlaying = true
+  carouselInterval = setInterval(nextImage, 3500) 
   }
+}
 
-  function stopCarousel(){
-    isPlaying = false
-    clearInterval(carouselInterval)
-  }
+function stopCarousel(){
+  isPlaying = false
+  clearInterval(carouselInterval)
+}
 
-  //Set play and pause button on and off 
-  const playPauseButton = document.querySelectorAll('.play-pause-button img')
-  let counter = 0
+
+//Set play and pause button on and off 
+const playPauseButton = document.querySelectorAll('.play-pause-button img')
 
 playPauseButton.forEach(eachPlayPauseButton => 
   eachPlayPauseButton.addEventListener('click', function(){
-  counter++
-  if(counter % 2 === 1){
+  count++
+  if(count % 2 === 1){
     stopCarousel()
     eachPlayPauseButton.style.outline = 'thin dotted white'
   } else {
@@ -146,6 +160,7 @@ playPauseButton.forEach(eachPlayPauseButton =>
     eachPlayPauseButton.style.outline = 'none'
   }
 }))
+
 
 // Display or hide carousel arrow button when all the way to the left or right. 
 function displayOnOffArrowButton(currentIndex){
@@ -172,8 +187,8 @@ thumbnailSlideImages.forEach(image => image.style.filter = 'opacity(25%)')
 thumbnailSlideImages[0].style.filter = 'opacity(100%)'
 thumbnailSlideImages[0].style.borderRadius = '50px'
 
-  // Add event listener to each image element
-  thumbnailSlideImages.forEach(thumbImg => 
+// Add event listener to each image element
+thumbnailSlideImages.forEach(thumbImg => 
   thumbImg.addEventListener('click',function (event){
   event.target //event on click 
   //Reset the styling
@@ -199,24 +214,7 @@ thumbnailSlideImages[0].style.borderRadius = '50px'
 
 
 
-//MENU NAVIGATION
-const menuItems = document.querySelectorAll('.menu-list a')
-//Set item default style
-menuItems[1].style.opacity = '0.5'
-menuItems[2].style.opacity = '0.5'
 
-//Change item style when scrolling
-window.onscroll = function(){
-  const top = window.scrollY
-  menuItems.forEach(menuItem => menuItem.style.opacity = '0.5')
-  if(top >= 0 && top < 500 ){
-    menuItems[0].style.opacity  = '1'
-   } else if(top > 500 && top < 1500){
-    menuItems[1].style.opacity = '1'
-   } else if(top > 1500){
-    menuItems[2].style.opacity = '1'
-  }
- }
 
 
 
