@@ -27,6 +27,7 @@ body {
   height: 60px;
   margin-left: 2.5em;
   margin-top: 0.3em;
+  opacity: 0.7;
 }
 
 #nav-bar img {
@@ -60,9 +61,7 @@ body {
 
 .home-container {
   margin: 0 auto;
-  padding-top: 18%;
-  max-width: 700px;
-  height: auto;
+  padding-top: 19%;
 }
 
 .wrapper-face {
@@ -78,16 +77,11 @@ body {
   font-family: "Comfortaa", cursive;
 }
 
-#changing-message-aside {
-  width: 300px;
-}
-
 .changing-message-letter {
   height: 360px;
   position: absolute;
   left: 50%;
   margin: 0 auto;
-  z-index: 1;
 }
 
 .face {
@@ -123,7 +117,6 @@ body {
 
 #talkbubble {
   text-decoration: underline;
-  /* font-family: "Comfortaa", cursive; */
   font-size:18px;
   padding-left:15px;
   font-family: "Segoe UI";
@@ -404,7 +397,6 @@ span {
   color: #58b7d6;
   font-family: "Comfortaa", cursive;
   font-size: 14px;
-  background: #f4f6ef;
   background: rgba(246, 246, 239, 0.5);
   padding: 2px;
 }
@@ -447,7 +439,6 @@ textarea {
 }
 
 textarea {
-  vertical-align: top;
   height: 8em;
 }
 
@@ -490,13 +481,17 @@ textarea {
     height: 70px;
   }
 
-  .home-container {
-    padding-top: 35%;
+  .menu ul {
+    font-size: 0.7em;
+    padding-left: 0.01px;
   }
 
-  #face-happy,
-  #face-sad {
-    max-width: 200px;
+  .menu ul li {
+    padding: 0 0.7em;
+  }
+  
+  .home-container {
+    padding-top: 40%;
   }
 
   .wrapper-face {
@@ -513,7 +508,7 @@ textarea {
   }
 
   .face {
-    width: 200px;
+    max-width: 200px;
   }
 
   .bubble {
@@ -537,22 +532,13 @@ textarea {
   }
 
   .intro h1 {
-    font-size: 0.9em;
+    font-size: 0.8em;
     text-align: left;
   }
 
   .intro p {
     font-size: 0.5em;
     padding-right: 10px;
-  }
-
-  .menu ul {
-    font-size: 0.7em;
-    padding-left: 0.01px;
-  }
-
-  .menu ul li {
-    padding: 0 0.7em;
   }
 
   figcaption {
@@ -571,6 +557,11 @@ textarea {
   .carousel-button--next {
     right: 0.025em;
   }
+  
+  .thumbnail-slide img {
+    max-width: 95%;
+    height: 6vh;
+  }
 
   .wrapper-contact {
     flex-wrap: wrap;
@@ -587,39 +578,31 @@ textarea {
     padding-left: 1.5em;
   }
 
-  .contact-form {
-    width: 85%;
-  }
-
   .personal-image {
     width: 200px;
   }
 
-  .footer {
-    font-size: 10px;
-    letter-spacing: 0.1em;
+ .sayHi-message {
+    font-size:14px;
+    width: 300px;
   }
-
-  .thumbnail-slide img {
-    height: 6vh;
-  }
-
-  .thumbnail-slide img {
-    max-width: 95%;
-  }
+  
+ label {
+  font-size:14px;
 }
 
-/* If the browser window is 768px or higher */
+ input{
+  font-size:14px;
+ }
+
+ .footer {
+  font-size: 12px;
+  letter-spacing: 0.1em;
+ }
+}
+
+/* If the browser window is 768px or up */
 @media screen and (min-width: 768px) {
-  .changing-message {
-    position: absolute;
-    margin: -30px 15px;
-  }
-
-  .bubble {
-    margin-top: 25%;
-  }
-
   .bubble:after {
     content: "";
     position: absolute;
@@ -629,19 +612,16 @@ textarea {
     border-bottom: 1.7em solid transparent;
   }
 
-  .additional {
-    font-size: 0.7em;
-    margin-top: -25px;
+  .intro h1 {
+    font-size: 1em;
   }
+
+  .intro p {
+    font-size: 0.7em;
+   }
 
   figcaption {
-    font-size: 0.82em;
-  }
-
-  input,
-  textarea {
-    width: 40vw;
-    min-width: 100%;
+    font-size: 0.55em;
   }
 
   .wrapper-face {
@@ -649,22 +629,12 @@ textarea {
 }
 
 
-/* If the browser window is 992px and up */
-@media screen and (min-width: 992px) {
-  input,
-  textarea {
-    width: 28vw;
-  }
-
+/* If the browser window is 992px and up to max */
+@media screen and (min-width: 992px) and (max-width:1440px){
 .wrapper-face {
     left: 30%;
 }
-}
-
-/* If the browser window is 1200px or smaller */
-@media only screen and (min-width: 1200px) {
-  .additional {
-    font-size: 1em;
-    margin-top: -20px;
-  }
+figcaption {
+  font-size: 0.65em;
+ }
 }

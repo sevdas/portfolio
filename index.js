@@ -15,11 +15,11 @@ menuItems[2].style.opacity = '0.5'
 window.onscroll = function(){
   const top = window.scrollY
   menuItems.forEach(menuItem => menuItem.style.opacity = '0.5')
-  if(top >= 0 && top < 500 ){
+  if(top >= 0 && top < 400 ){
     menuItems[0].style.opacity  = '1'
-   } else if(top > 500 && top < 1500){
+   } else if(top > 400 && top < 1000){
     menuItems[1].style.opacity = '1'
-   } else if(top > 1500){
+   } else if(top > 1000){
     menuItems[2].style.opacity = '1'
   }
  }
@@ -38,7 +38,6 @@ function typeWriterWelcome(){
     const helloMsgLetter = document.createElement('p')
     helloMsgLetter.classList.add('changing-message-letter')
     helloMsgLetter.innerText = innerTextArray[idx]
-    console.log(innerTextArray[idx])
     helloMsgLetter.style.transform = `rotate(${(-115)+idx*8}deg) `
     document.getElementById('changing-message').appendChild(helloMsgLetter)
     idx++
@@ -61,7 +60,6 @@ sadFace.style.display='none'
 function moodyFace() {
    count++
    if (count%2 === 0) {
-     console.log(count)
     happyFace.style.display='block'
     sadFace.style.display='none'
     homeSection.style.background = '#f4f6ef'
@@ -74,6 +72,7 @@ function moodyFace() {
    }
 }
 face.addEventListener('click', moodyFace)
+
 
 //CAROUSEL
 const trackList = document.querySelector('.carousel-track-list')
@@ -215,19 +214,3 @@ thumbnailSlideImages.forEach(thumbImg =>
    //Active prev and next buttons per thumb start index
    currentIndex = targetImageIndex
 }))
-
-
-
-
-
-
-const changing = document.querySelector('.message-face-group')
-// console.log(changing)
-
-const homeCont = document.querySelector('.home-container')
-// console.log(homeCont)
-
-const wrapperFace = document.querySelector('.wrapper-face')
-// console.log(wrapperFace)
-
-// console.log(helloMessage) //changing-message-aside
