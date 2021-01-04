@@ -29,7 +29,8 @@ window.onscroll = function(){
 const helloMessageInnerText='Hello! Welcome to my world!'
 const innerTextArray = helloMessageInnerText.split('')
 // Parent Element
-const helloMessage = document.getElementById('changing-message-aside')
+const helloMessage = document.getElementById('changing-message')
+
 
 let idx = 0;
 function typeWriterWelcome(){ 
@@ -37,8 +38,9 @@ function typeWriterWelcome(){
     const helloMsgLetter = document.createElement('p')
     helloMsgLetter.classList.add('changing-message-letter')
     helloMsgLetter.innerText = innerTextArray[idx]
+    console.log(innerTextArray[idx])
     helloMsgLetter.style.transform = `rotate(${(-115)+idx*8}deg) `
-    document.getElementById('changing-message-aside').appendChild(helloMsgLetter)
+    document.getElementById('changing-message').appendChild(helloMsgLetter)
     idx++
 }
 setTimeout(typeWriterWelcome, 100)
@@ -47,15 +49,19 @@ typeWriterWelcome()
 
 
 //MOODY FACE
+const face = document.querySelector('.face')
 const happyFace = document.querySelector('#face-happy')
 const sadFace = document.querySelector('#face-sad')
 const homeSection = document.querySelector('#home')
 const bubbleMessage = document.querySelector('#talkbubble')
 
+//Default style
 sadFace.style.display='none'
+//Change style
 function moodyFace() {
    count++
    if (count%2 === 0) {
+     console.log(count)
     happyFace.style.display='block'
     sadFace.style.display='none'
     homeSection.style.background = '#f4f6ef'
@@ -67,9 +73,7 @@ function moodyFace() {
     bubbleMessage.textContent = 'I can not see you! :/ Switch back please!'
    }
 }
-happyFace.addEventListener('click', moodyFace)
-sadFace.addEventListener('click', moodyFace)
-
+face.addEventListener('click', moodyFace)
 
 //CAROUSEL
 const trackList = document.querySelector('.carousel-track-list')
@@ -217,5 +221,13 @@ thumbnailSlideImages.forEach(thumbImg =>
 
 
 
+const changing = document.querySelector('.message-face-group')
+// console.log(changing)
 
+const homeCont = document.querySelector('.home-container')
+// console.log(homeCont)
 
+const wrapperFace = document.querySelector('.wrapper-face')
+// console.log(wrapperFace)
+
+// console.log(helloMessage) //changing-message-aside

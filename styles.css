@@ -60,24 +60,21 @@ body {
 
 .home-container {
   margin: 0 auto;
-  padding-top: 22.5%;
+  padding-top: 18%;
   max-width: 700px;
   height: auto;
 }
 
 .wrapper-face {
   display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.wrapper-face :hover {
-  cursor: not-allowed;
-}
-
-.changing-message {
+  flex-direction: row;
+  align-items: flex-end;
   position: absolute;
-  margin: -30px 0px;
+  left: 30%;
+}
+
+.message-face-group {
+  position: relative;
   font-family: "Comfortaa", cursive;
 }
 
@@ -90,13 +87,24 @@ body {
   position: absolute;
   left: 50%;
   margin: 0 auto;
+  z-index: 1;
+}
+
+.face {
+  width: 300px;
+  position: relative;
+  left: 0;
+  z-index: 2;
+  margin-top: 5%;
 }
 
 #face-happy,
 #face-sad {
-  min-width: 300px;
-  width: 300px;
-  z-index: 2;
+  max-width: 300px;
+}
+
+.face :hover {
+  cursor: not-allowed;
 }
 
 .bubble {
@@ -104,17 +112,21 @@ body {
   height: 50px;
   background-color: #58b7d6;
   position: relative;
+  left: 0;
   border-radius: 15px;
   padding: 2em;
   display: flex;
   justify-content: center;
   align-items: center;
   line-height: 1.4em;
-  margin-top: 15%;
 }
 
 #talkbubble {
   text-decoration: underline;
+  /* font-family: "Comfortaa", cursive; */
+  font-size:18px;
+  padding-left:15px;
+  font-family: "Segoe UI";
 }
 
 #about {
@@ -465,42 +477,6 @@ textarea {
   word-spacing: 0.7em;
 }
 
-/* If the browser window is 280px or higher */
-@media screen and (min-width: 280px) {
-  .changing-message {
-    position: absolute;
-    margin: -30px 30px;
-  }
-
-  #changing-message-aside {
-    width: 250px;
-  }
-}
-
-/* If the browser window is 375px or higher */
-@media screen and (min-width: 375px) {
-  .changing-message {
-    position: absolute;
-    margin: -30px 55px;
-  }
-}
-
-/* If the browser window is 395px or higher */
-@media screen and (min-width: 395px) {
-  .changing-message {
-    position: absolute;
-    margin: -30px 68px;
-  }
-}
-
-/* If the browser window is 420px or higher */
-@media screen and (min-width: 420px) {
-  .changing-message {
-    position: absolute;
-    margin: -30px 80px;
-  }
-}
-
 /* If the browser window is 600px or smaller */
 @media screen and (max-width: 600px) {
   .personal-logo-figure {
@@ -513,31 +489,40 @@ textarea {
   }
 
   .home-container {
-    padding-top: 50%;
+    padding-top: 35%;
   }
 
   #face-happy,
   #face-sad {
-    flex: 0 1 200px;
-    min-width: 100px;
+    max-width: 200px;
   }
 
   .wrapper-face {
-    flex-wrap: wrap;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: static;
   }
 
   .changing-message-letter {
-    height: 280px;
+    height: 260px;
+    position: absolute;
+    left: 45%;
+  }
+
+  .face {
+    width: 200px;
   }
 
   .bubble {
-    flex: 0 1 180px;
     height: 20px;
+    width: 160px;
+    margin-top: 10%;
   }
 
   #talkbubble {
-    font-size: 0.85em;
-    padding-left: 10px;
+    font-size: 0.9em;
+    font-family: "Segoe UI";
   }
 
   .bubble:after {
@@ -622,7 +607,7 @@ textarea {
   }
 }
 
-/* If the browser window is 768px or smaller */
+/* If the browser window is 768px or higher */
 @media screen and (min-width: 768px) {
   .changing-message {
     position: absolute;
@@ -656,13 +641,22 @@ textarea {
     width: 40vw;
     min-width: 100%;
   }
+
+  .wrapper-face {
+    left: 20%;
 }
-/* If the browser window is 992px or smaller */
+
+
+/* If the browser window is 992px and up */
 @media screen and (min-width: 992px) {
   input,
   textarea {
     width: 28vw;
   }
+
+.wrapper-face {
+    left: 30%;
+}
 }
 
 /* If the browser window is 1200px or smaller */
