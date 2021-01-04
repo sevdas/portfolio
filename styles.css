@@ -22,11 +22,11 @@ body {
   height: 90px;
 }
 
-.personal-logo-figure {
-  width: 100px;
+.brand-logo-figure {
+  width: 70px;
   height: 60px;
-  margin-left: 1em;
-  margin-top: 0.1em;
+  margin-left: 2.5em;
+  margin-top: 0.3em;
 }
 
 #nav-bar img {
@@ -479,9 +479,11 @@ textarea {
 
 /* If the browser window is 600px or smaller */
 @media screen and (max-width: 600px) {
-  .personal-logo-figure {
-    width: 70px;
-    height: 35px;
+  .brand-logo-figure {
+    width: 50px;
+    height: 30px;
+    margin-left: 1.2em;
+    margin-top: -0.2em;
   }
 
   #nav-bar {
