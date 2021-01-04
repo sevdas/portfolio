@@ -150,17 +150,18 @@ function stopCarousel(){
 
 
 //Set play and pause button on and off 
-const playPauseButton = document.querySelectorAll('.play-pause-button img')
+const playPauseButton = document.querySelectorAll('.play-pause-button')
 
 playPauseButton.forEach(eachPlayPauseButton => 
   eachPlayPauseButton.addEventListener('click', function(){
   count++
   if(count % 2 === 1){
     stopCarousel()
-    eachPlayPauseButton.style.outline = 'thin dotted white'
+    eachPlayPauseButton.style.opacity = '0.4'
   } else {
     playCarousel()
     eachPlayPauseButton.style.outline = 'none'
+    eachPlayPauseButton.style.opacity = '1'
   }
 }))
 
