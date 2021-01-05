@@ -119,7 +119,6 @@ body {
   text-decoration: underline;
   font-size:18px;
   padding-left:15px;
-  font-family: "Segoe UI";
 }
 
 #about {
@@ -249,7 +248,7 @@ figcaption h2 {
 }
 
 #play-pause:focus {
-  outline: thin dotted #fa2806;
+  outline: none;
 }
 
 .controls-direction button {
@@ -494,7 +493,6 @@ textarea {
     padding: 0 0.7em;
   }
   
-
   .wrapper-face {
     display: flex;
     flex-direction: column;

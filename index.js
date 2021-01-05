@@ -2,6 +2,7 @@
 // Break it down to manegable pieces, experiment and make things work. It's not about doing things 
 // right way but making things work and then improving them so they work.  
 
+
 let count = 0 //Start point
 
 
@@ -30,7 +31,6 @@ const helloMessageInnerText='Hello! Welcome to my world!'
 const innerTextArray = helloMessageInnerText.split('')
 // Parent Element
 const helloMessage = document.getElementById('changing-message')
-
 
 let idx = 0;
 function typeWriterWelcome(){ 
@@ -96,7 +96,7 @@ const checkLimits = () => {
 function nextImage(){
   carouselSlides[currentIndex].classList.remove('visible')
   carouselSlides[currentIndex].classList.add('hidden')
-  // Reset styling
+  //Reset styling
   thumbnailSlideImages[currentIndex].style.filter = 'opacity(25%)'
   thumbnailSlideImages[currentIndex].style.borderRadius = '0px'
   currentIndex++
@@ -116,7 +116,7 @@ nextButton.addEventListener('click', nextImage)
 function prevImage(){
   carouselSlides[currentIndex].classList.remove('visible')
   carouselSlides[currentIndex].classList.add('hidden')
-  // Reset styling
+  //Reset styling
   thumbnailSlideImages[currentIndex].style.filter = 'opacity(25%)'
   thumbnailSlideImages[currentIndex].style.borderRadius = '0px'
   currentIndex--
@@ -170,10 +170,11 @@ function pauseDisplayOff() {
   return Array.from(pauseButton).map(pauseBtn => pauseBtn.style.display = 'none') 
 }
 
+//Default Value
 pauseDisplayOff()
+
 playPauseButton.forEach(playPauseBtn => 
   playPauseBtn.addEventListener('click', function(){
-
   count++
   if(count % 2 === 1){
     stopCarousel()
