@@ -234,22 +234,22 @@ figcaption h2 {
   line-height: 1.5em;
 }
 
-.play-pause-button {
+#play-pause {
   background-color:#fa2806;
   border: 0px solid transparent;
   border-radius: 50px;
   margin: 1.5em 0 2em;
 }
 
-
-.play-pause {
+.play,
+.pause {
   max-width: 4vh;
   height: 4vh;
   padding:1em;
 }
 
-.play-pause-button:focus {
-  outline: none;
+#play-pause:focus {
+  outline: thin dotted #fa2806;
 }
 
 .controls-direction button {
@@ -473,7 +473,7 @@ textarea {
 }
 
 /* If the browser window is 600px or smaller */
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 600px) {
   .brand-logo-figure {
     width: 50px;
     height: 30px;
@@ -544,15 +544,17 @@ textarea {
 
   figcaption {
     font-size: 0.4em;
-    padding: 3em 2em;
+    padding: 4em 2em;
     width:90%;
   }
 
-  .play-pause-button {
+  .play-pause {
     padding:1em;
+    margin: 0 0 0.5em;
   }
 
-  .play-pause {
+  .play,
+  .pause {
     padding: 0.01em;
   }
 
@@ -634,6 +636,10 @@ textarea {
     font-size: 0.55em;
   }
 
+  .play-pause {
+      margin: 0 0 1em;
+  }
+
   .wrapper-face {
     left: 20%;
 }
@@ -646,6 +652,5 @@ textarea {
 }
 figcaption {
   font-size: 0.70em;
-  margin-top: 5em;
  }
 }

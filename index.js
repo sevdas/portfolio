@@ -132,14 +132,14 @@ function prevImage(){
 prevButton.addEventListener('click', prevImage)
  
 
-// Run Carousel in set of intervals
-let carouselInterval = setInterval(nextImage, 3500)
+//RUN CAROUSEL IN SET OF INTERVALS
+let carouselInterval = setInterval(nextImage, 2500)
 let isPlaying = true
 
 function playCarousel(){
   if(!isPlaying){
   isPlaying = true
-  carouselInterval = setInterval(nextImage, 3500) 
+  carouselInterval = setInterval(nextImage, 2500) 
   }
 }
 
@@ -149,19 +149,39 @@ function stopCarousel(){
 }
 
 
-//Set play and pause button on and off 
-const playPauseButton = document.querySelectorAll('.play-pause-button')
+//PLAY & PAUSE CAROUSEL
+const playPauseButton = document.querySelectorAll('#play-pause')
+const playButton = document.querySelectorAll('.play')
+const pauseButton = document.querySelectorAll('.pause')
 
-playPauseButton.forEach(eachPlayPauseButton => 
-  eachPlayPauseButton.addEventListener('click', function(){
+function playDisplayOff() {
+  return Array.from(playButton).map(playBtn => playBtn.style.display = 'none') 
+}
+
+function playDisplayOn() {
+  return Array.from(playButton).map(playBtn => playBtn.style.display = 'block') 
+}
+
+function pauseDisplayOn() {
+  return Array.from(pauseButton).map(pauseBtn => pauseBtn.style.display = 'block') 
+}
+
+function pauseDisplayOff() {
+  return Array.from(pauseButton).map(pauseBtn => pauseBtn.style.display = 'none') 
+}
+
+playPauseButton.forEach(playPauseBtn => 
+  playPauseBtn.addEventListener('click', function(){
+
   count++
   if(count % 2 === 1){
     stopCarousel()
-    eachPlayPauseButton.style.opacity = '0.4'
+    playDisplayOff()
+    pauseDisplayOn()
   } else {
     playCarousel()
-    eachPlayPauseButton.style.outline = 'none'
-    eachPlayPauseButton.style.opacity = '1'
+    playDisplayOn()
+    pauseDisplayOff()   
   }
 }))
 
@@ -181,7 +201,7 @@ function displayOnOffArrowButton(currentIndex){
 }
 
 
-//Thumbnail Image Gallery
+//THUMBNAIL IMAGE GALLERY
 const thumbnailTrackList = document.querySelector('.thumbnail-track-list')
 const thumbnailSlideImages = document.querySelectorAll('.thumbnail-slide img')
 const thumbImages = document.querySelectorAll('.thumbnail-image')
