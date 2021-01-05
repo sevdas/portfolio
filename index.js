@@ -170,6 +170,7 @@ function pauseDisplayOff() {
   return Array.from(pauseButton).map(pauseBtn => pauseBtn.style.display = 'none') 
 }
 
+pauseDisplayOff()
 playPauseButton.forEach(playPauseBtn => 
   playPauseBtn.addEventListener('click', function(){
 
