@@ -117,8 +117,8 @@ body {
 
 #talkbubble {
   text-decoration: underline;
-  font-size:18px;
-  padding-left:15px;
+  font-size: 18px;
+  padding-left: 15px;
 }
 
 #about {
@@ -217,7 +217,7 @@ figcaption {
   color: #f4f6ef;
   text-align: center;
   margin: 0 auto;
-  width:95%;
+  width: 95%;
 }
 
 figcaption h2 {
@@ -234,7 +234,7 @@ figcaption h2 {
 }
 
 #play-pause {
-  background-color:#fa2806;
+  background-color: #fa2806;
   border: 0px solid transparent;
   border-radius: 50px;
   margin: 1.5em 0 2em;
@@ -244,7 +244,7 @@ figcaption h2 {
 .pause {
   max-width: 4vh;
   height: 4vh;
-  padding:1em;
+  padding: 1em;
 }
 
 #play-pause:focus {
@@ -492,7 +492,7 @@ textarea {
   .menu ul li {
     padding: 0 0.7em;
   }
-  
+
   .wrapper-face {
     display: flex;
     flex-direction: column;
@@ -543,11 +543,11 @@ textarea {
   figcaption {
     font-size: 0.4em;
     padding: 4em 2em;
-    width:90%;
+    width: 90%;
   }
 
   .play-pause {
-    padding:1em;
+    padding: 1em;
     margin: 0 0 0.5em;
   }
 
@@ -567,7 +567,7 @@ textarea {
   .carousel-button--next {
     right: 0.025em;
   }
-  
+
   .thumbnail-slide img {
     max-width: 95%;
     height: 6vh;
@@ -592,23 +592,23 @@ textarea {
     width: 200px;
   }
 
- .sayHi-message {
-    font-size:14px;
+  .sayHi-message {
+    font-size: 14px;
     max-width: 300vw;
   }
 
- label {
-  font-size:14px;
-}
+  label {
+    font-size: 14px;
+  }
 
- input{
-  font-size:14px;
- }
+  input {
+    font-size: 14px;
+  }
 
- .footer {
-  font-size: 12px;
-  letter-spacing: 0.1em;
- }
+  .footer {
+    font-size: 12px;
+    letter-spacing: 0.1em;
+  }
 }
 
 /* If the browser window is 768px or up */
@@ -628,27 +628,27 @@ textarea {
 
   .intro p {
     font-size: 0.7em;
-   }
+  }
 
   figcaption {
     font-size: 0.55em;
   }
 
   .play-pause {
-      margin: 0 0 1em;
+    margin: 0 0 1em;
   }
 
   .wrapper-face {
     left: 20%;
-}
+  }
 
-
-/* If the browser window is 992px and up to max */
-@media screen and (min-width: 992px) {
-.wrapper-face {
-    left: 30%;
-}
-figcaption {
-  font-size: 0.70em;
- }
+  /* If the browser window is 992px and up to max */
+  @media screen and (min-width: 992px) {
+    .wrapper-face {
+      left: 30%;
+    }
+    figcaption {
+      font-size: 0.7em;
+    }
+  }
 }
