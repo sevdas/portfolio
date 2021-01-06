@@ -171,19 +171,20 @@ function pauseDisplayOff() {
 }
 
 //Default Value
-pauseDisplayOff()
+pauseDisplayOn()
+playDisplayOff()
 
 playPauseButton.forEach(playPauseBtn => 
   playPauseBtn.addEventListener('click', function(){
   count++
   if(count % 2 === 1){
     stopCarousel()
-    playDisplayOff()
-    pauseDisplayOn()
+    playDisplayOn()
+    pauseDisplayOff()
   } else {
     playCarousel()
-    playDisplayOn()
-    pauseDisplayOff()   
+    playDisplayOff()
+    pauseDisplayOn()   
   }
 }))
 
