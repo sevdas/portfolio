@@ -133,13 +133,14 @@ prevButton.addEventListener('click', prevImage)
  
 
 //RUN CAROUSEL IN SET OF INTERVALS
-let carouselInterval = setInterval(nextImage, 5000)
+const CAROUSEL_INTERVAL = 10000; // 10s
+let carouselInterval = setInterval(nextImage, CAROUSEL_INTERVAL)
 let isPlaying = true
 
 function playCarousel(){
   if(!isPlaying){
   isPlaying = true
-   carouselInterval = setInterval(nextImage, 5000)
+   carouselInterval = setInterval(nextImage, CAROUSEL_INTERVAL)
   }
 }
 
